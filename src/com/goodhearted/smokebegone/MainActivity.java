@@ -11,6 +11,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        int a = 2 + 3;
+        String text = "Hello";
     }
 }
