@@ -12,10 +12,13 @@ public class SplashActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
-		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE); // Hide title bar for full-screen splash
 		setContentView(R.layout.activity_splash);
-		if(already_ran) {
+		
+		if(already_ran) {  // check if the splash was already shown, if this is the case skip splash
 			startActivity(new Intent(SplashActivity.this, MenuActivity.class));
 		} else {
 			Thread timer = new Thread(){
@@ -36,7 +39,6 @@ public class SplashActivity extends Activity {
 
 	@Override
 	protected void onPause() {
-		// TODO Auto-generated method stub
 		super.onPause();
 		finish();
 	}
