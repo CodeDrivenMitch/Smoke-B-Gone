@@ -19,8 +19,6 @@ public class AccountClass extends SQLiteOpenHelper{
 		      + " integer primary key autoincrement, " + COLUMN_DATE
 		      + " integer not null);";
 	
-	SharedPreferences settings;
-	
 	public AccountClass(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
