@@ -5,9 +5,8 @@ import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.preference.PreferenceManager;
 
-public final class AccountClass extends SQLiteOpenHelper{
+public class AccountClass extends SQLiteOpenHelper{
 
 	public static final String TABLE_SMOKES = "smokes";
 	public static final String COLUMN_ID = "_id";
