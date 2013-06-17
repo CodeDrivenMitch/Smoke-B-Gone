@@ -3,7 +3,6 @@ package com.goodhearted.smokebegone;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class AccountClass extends SQLiteOpenHelper{
@@ -18,13 +17,12 @@ public class AccountClass extends SQLiteOpenHelper{
 	private static final String SMOKES_CREATE = "create table "
 		      + TABLE_SMOKES + "(" + COLUMN_ID
 		      + " integer primary key autoincrement, " + COLUMN_DATE
-		      + " DATETIME not null);";
+		      + " integer not null);";
 	
 	SharedPreferences settings;
 	
-	public AccountClass(Context context, String name, CursorFactory factory,
-			int version) {
-		super(context, name, factory, version);
+	public AccountClass(Context context) {
+		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
 	@Override
