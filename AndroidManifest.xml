@@ -34,6 +34,10 @@
             android:name="com.goodhearted.smokebegone.InfoActivity"
             android:label="@string/title_activity_info" >
         </activity>
+        <activity
+            android:name="com.goodhearted.smokebegone.Info_Activity"
+            android:label="@string/title_activity_info_" >
+        </activity>
     </application>
 
 </manifest>
