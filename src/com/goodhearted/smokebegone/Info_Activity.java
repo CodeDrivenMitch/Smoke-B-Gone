@@ -18,10 +18,10 @@ public class Info_Activity extends Activity {
 
 		TabSpec spec1=tabHost.newTabSpec("Tab 1");
 		spec1.setContent(R.id.tab1);
-		spec1.setIndicator("Tab 1");
+		spec1.setIndicator("KWF Informatie");
 
 		TabSpec spec2=tabHost.newTabSpec("Tab 2");
-		spec2.setIndicator("Tab 2");
+		spec2.setIndicator("Applicatie Informatie");
 		spec2.setContent(R.id.tab2);
 
 
