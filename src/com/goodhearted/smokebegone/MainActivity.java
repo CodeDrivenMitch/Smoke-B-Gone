@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
-	TextView tv, tvdate;
+	TextView tv, tvdate, tvsince;
 	Button plus, minus, info;
 	
     @Override
@@ -31,6 +31,7 @@ public class MainActivity extends Activity implements OnClickListener {
         info.setOnClickListener(this);
         tv = (TextView) findViewById(R.id.tvSMOKES);
         tvdate = (TextView) findViewById(R.id.tvDATE);
+        tvsince = (TextView) findViewById(R.id.tvSINCE);
         updateTV();
         updateTVDATE();
     }
@@ -67,8 +68,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		} else {
 			Smoke x = DAO.getLastSmoke();
 			Date y = x.getDateDate();
-			
+			Date z = new Date();
+			long g = z.getTime() - y.getTime();
 			tvdate.setText("last smoke was at: " + y.toGMTString());
+			tvsince.setText("since: " + g);
 		}
 	}
 }

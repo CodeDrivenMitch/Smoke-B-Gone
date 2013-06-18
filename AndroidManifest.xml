@@ -38,6 +38,10 @@
             android:name="com.goodhearted.smokebegone.Info_Activity"
             android:label="@string/title_activity_info_" >
         </activity>
+        <activity
+            android:name="com.goodhearted.smokebegone.WelcomeActivity"
+            android:label="@string/title_activity_welcome" >
+        </activity>
     </application>
 
 </manifest>
