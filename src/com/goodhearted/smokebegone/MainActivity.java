@@ -1,5 +1,7 @@
 package com.goodhearted.smokebegone;
 
+import java.util.Date;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +15,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
-	TextView tv;
+	TextView tv, tvdate;
 	Button plus, minus, info;
 	
     @Override
@@ -29,7 +31,9 @@ public class MainActivity extends Activity implements OnClickListener {
         info = (Button) findViewById(R.id.info);
         info.setOnClickListener(this);
         tv = (TextView) findViewById(R.id.tvSMOKES);
+        tvdate = (TextView) findViewById(R.id.tvDATE);
         updateTV();
+        updateTVDATE();
     }
 
 	@Override
@@ -54,11 +58,22 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		
 		updateTV();
+		updateTVDATE();
 		Log.d("DBG", "TV UPDATED");
 	}
 	
 	private void updateTV() {
 		int total = DAO.getTotalSmokes();
 		tv.setText("Total smokes: " + total);
+	}
+	private void updateTVDATE() {
+		if(DAO.getTotalSmokes() < 1) {
+			tvdate.setText("None smokes yet");
+		} else {
+			Smoke x = DAO.getLastSmoke();
+			Date y = x.getDateDate();
+			
+			tvdate.setText("last smoke was at: " + y.toGMTString());
+		}
 	}
 }
