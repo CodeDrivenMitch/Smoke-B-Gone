@@ -2,6 +2,7 @@ package com.goodhearted.smokebegone;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -13,7 +14,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
 	TextView tv;
-	Button plus, minus;
+	Button plus, minus, info;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class MainActivity extends Activity implements OnClickListener {
         plus.setOnClickListener(this);
         minus = (Button) findViewById(R.id.minusbutton);
         minus.setOnClickListener(this);
+        info = (Button) findViewById(R.id.info);
+        info.setOnClickListener(this);
         tv = (TextView) findViewById(R.id.tvSMOKES);
         updateTV();
     }
@@ -43,6 +46,10 @@ public class MainActivity extends Activity implements OnClickListener {
 			if(DAO.getTotalSmokes() > 0) {
 				DAO.removeLastSmoke(DAO.getLastSmoke());
 			}
+			break;
+		case R.id.info:
+			Intent i = new Intent(this, Info_Activity.class);
+			this.startActivity(i);
 			break;
 		}
 		

@@ -36,4 +36,12 @@
         android:layout_toRightOf="@+id/plusbutton"
         android:text="-" />
 
+    <Button
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Info" />
+
 </RelativeLayout>
