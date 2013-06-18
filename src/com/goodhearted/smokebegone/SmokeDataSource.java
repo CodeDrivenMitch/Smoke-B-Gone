@@ -72,7 +72,7 @@ public class SmokeDataSource {
 	private Smoke cursorToSmoke(Cursor c) {
 		Smoke x = new Smoke();
 		x.setId(c.getLong(0));
-		x.setDate(c.getInt(1));
+		x.setDate(c.getLong(1));
 		return x;
 	}
 }
