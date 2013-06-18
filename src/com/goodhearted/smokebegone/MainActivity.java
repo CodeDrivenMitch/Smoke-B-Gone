@@ -5,7 +5,6 @@ import java.util.Date;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -39,14 +38,11 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		Log.d("DBG", "CLICKED");
 		switch(arg0.getId()) {
 		case R.id.plusbutton:
-			Log.d("DBG", " PLUS CLICKED");
 			DAO.createSmoke();
 			break;
 		case R.id.minusbutton:
-			Log.d("DBG", " MINUS CLICKED");
 			if(DAO.getTotalSmokes() > 0) {
 				DAO.removeLastSmoke(DAO.getLastSmoke());
 			}
@@ -59,7 +55,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 		updateTV();
 		updateTVDATE();
-		Log.d("DBG", "TV UPDATED");
 	}
 	
 	private void updateTV() {

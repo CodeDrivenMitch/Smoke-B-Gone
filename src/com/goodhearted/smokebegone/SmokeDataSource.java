@@ -37,7 +37,6 @@ public class SmokeDataSource {
 	}
 
 	public void createSmoke() {
-		Log.d("DBG", "INSERTING SMOKE");
 		Date d = new Date();
 		long d_s = d.getTime();
 		ContentValues values = new ContentValues();
@@ -45,7 +44,6 @@ public class SmokeDataSource {
 	    long insertId = database.insert(AccountClass.TABLE_SMOKES, null,
 	        values);
 		
-		Log.d("DBG", "INSERTED SMOKE WITH ID " + insertId);
 	}
 	
 	public Smoke getLastSmoke() {
