@@ -25,11 +25,14 @@ public final class R {
     }
     public static final class id {
 <<<<<<< HEAD
+<<<<<<< HEAD
         public static final int action_settings=0x7f080003;
         public static final int minusbutton=0x7f080002;
         public static final int plusbutton=0x7f080001;
         public static final int tvSMOKES=0x7f080000;
 =======
+=======
+>>>>>>> f0d088d4fa3cd73c7affab775fc57036cb71ae4a
         public static final int action_settings=0x7f080008;
         public static final int minusbutton=0x7f080005;
         public static final int plusbutton=0x7f080006;
@@ -39,6 +42,9 @@ public final class R {
         public static final int tvSMOKES=0x7f080007;
         public static final int txt1=0x7f080002;
         public static final int txt2=0x7f080004;
+<<<<<<< HEAD
+>>>>>>> f0d088d4fa3cd73c7affab775fc57036cb71ae4a
+=======
 >>>>>>> f0d088d4fa3cd73c7affab775fc57036cb71ae4a
     }
     public static final class layout {
