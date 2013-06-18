@@ -8,9 +8,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/minusbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="44dp"
+        android:text="+" />
+
+    <Button
+        android:id="@+id/plusbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/minusbutton"
+        android:layout_marginLeft="46dp"
+        android:layout_toRightOf="@+id/minusbutton"
+        android:text="-" />
+
+    <TextView
+        android:id="@+id/tvSMOKES"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/plusbutton"
+        android:layout_alignLeft="@+id/minusbutton"
+        android:layout_marginLeft="18dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

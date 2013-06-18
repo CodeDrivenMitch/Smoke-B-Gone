@@ -18,6 +18,12 @@ public class SmokeDataSource {
 
 	public SmokeDataSource(Context context) {
 		dbHelper = new AccountClass(context);
+		try {
+			this.open();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void open() throws SQLException {
@@ -51,9 +57,7 @@ public class SmokeDataSource {
 	public List<Smoke> getAllSmokes() {
 	    List<Smoke> smokes = new ArrayList<Smoke>();
 
-	    Cursor cursor = database.query(AccountClass.TABLE_SMOKES,
-	        allColumns, null, null, null, null, null);
-
+	    Cursor cursor = database.rawQuery("SELECT * FROM " + AccountClass.TABLE_SMOKES, null);
 	    cursor.moveToFirst();
 	    while (!cursor.isAfterLast()) {
 	      Smoke smoke = cursorToSmoke(cursor);
