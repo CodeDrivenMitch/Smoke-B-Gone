@@ -5,9 +5,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class SmokeDataSource {
 
@@ -35,9 +37,15 @@ public class SmokeDataSource {
 	}
 
 	public void createSmoke() {
+		Log.d("DBG", "INSERTING SMOKE");
 		Date d = new Date();
 		long d_s = d.getTime();
-		database.rawQuery("INSERT INTO " + AccountClass.TABLE_SMOKES + " (" + AccountClass.COLUMN_DATE + ") VALUES (" + d_s + ")", null);
+		ContentValues values = new ContentValues();
+	    values.put(AccountClass.COLUMN_DATE, d_s);
+	    long insertId = database.insert(AccountClass.TABLE_SMOKES, null,
+	        values);
+		
+		Log.d("DBG", "INSERTED SMOKE WITH ID " + insertId);
 	}
 	
 	public Smoke getLastSmoke() {
