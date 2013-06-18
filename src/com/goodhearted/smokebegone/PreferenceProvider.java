@@ -10,6 +10,11 @@ public class PreferenceProvider {
 	
 	private static final String PREF_NAME = "SMOKEBEGONE_SETTINGS";
 	public static final int MODE = Context.MODE_PRIVATE;
+	
+	public static final String keyCPD = "CigarettesPerDay";
+	public static final String keyPPP = "PricePerPack";
+	public static final String keyCPP = "CigarettesPerPack";
+	public static final String keyQD = "QuitDate";
 
 	public static void writeBoolean(Context context, String key, boolean value) {
 		getEditor(context).putBoolean(key, value).commit();

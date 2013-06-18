@@ -19,10 +19,10 @@ public class SplashActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE); // Hide title bar for full-screen splash
 		setContentView(R.layout.activity_splash);
 		
-		if(already_ran) {  // check if the splash was already shown, if this is the case skip splash			
-			startActivity(new Intent(SplashActivity.this, MainActivity.class));
-		} else if(PreferenceProvider.readString(this, "quit_date", "-1") != "-1"){
+		if(PreferenceProvider.readString(this, PreferenceProvider.keyQD, "-1") == "-1") {  // check if the splash was already shown, if this is the case skip splash			
 			startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
+		} else if(already_ran){
+			startActivity(new Intent(SplashActivity.this, MainActivity.class));
 		} else {
 			Thread timer = new Thread(){
 				public void run() {
