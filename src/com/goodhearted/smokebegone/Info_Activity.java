@@ -45,14 +45,6 @@ public class Info_Activity extends Activity {
 			}
 		});}
 			
-
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.info_, menu);
-		return true;
-	}
 	
 	public boolean onOptionsItemSelected(MenuItem item){
         SlideHolder x = (SlideHolder) findViewById(R.id.bla);
