@@ -48,33 +48,6 @@
             android:layout_marginLeft="17dp"
             android:layout_toRightOf="@+id/plusbutton"
             android:text="-" />
-
-        <Button
-            android:id="@+id/info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="Info" />
-
-        <TextView
-            android:id="@+id/tvDATE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvSMOKES"
-            android:layout_below="@+id/plusbutton"
-            android:layout_marginTop="27dp"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/tvSINCE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/info"
-            android:layout_alignLeft="@+id/tvDATE"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
     </RelativeLayout>
 
 </com.goodhearted.smokebegone.SlideHolder>

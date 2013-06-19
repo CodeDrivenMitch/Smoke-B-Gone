@@ -38,8 +38,6 @@ public class MainActivity extends Activity implements OnClickListener {
         info = (Button) findViewById(R.id.info);
         info.setOnClickListener(this);
         tv = (TextView) findViewById(R.id.tvSMOKES);
-        tvdate = (TextView) findViewById(R.id.tvDATE);
-        tvsince = (TextView) findViewById(R.id.tvSINCE);
         updateTV();
   
     }
