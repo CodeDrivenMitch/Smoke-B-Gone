@@ -4,6 +4,7 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	Button plus, minus, info;
 
 	MenuHandler handler;
+	TextUpdate tu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		tv = (TextView) findViewById(R.id.tvSMOKES);
 		updateTV();
 
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		tu = new TextUpdate(this);
+		tu.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -68,7 +77,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		updateTV();
 	}
 
-	private void updateTV() {
+	public void updateTV() {
 		Period d;
 		long lastsmoketime;
 		
@@ -88,4 +97,50 @@ public class MainActivity extends Activity implements OnClickListener {
 			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
 		}
 	}
+	
+	
+}
+
+
+class TextUpdate extends AsyncTask<Void, Void, Void> {
+	
+	MainActivity act;
+	TextView tv;
+	TextUpdater tu;
+
+	private class TextUpdater implements Runnable {
+		
+		MainActivity act;
+		
+		public TextUpdater(MainActivity z)
+		{
+			this.act = z;
+		}
+		
+		@Override
+		public void run() {
+			this.act.updateTV();
+		}
+		
+	}
+
+	public TextUpdate(MainActivity act) {
+		this.act = act;
+		tu = new TextUpdater(this.act);
+		this.act.runOnUiThread(this.tu);
+	}
+
+	@Override
+	protected Void doInBackground(Void... arg0) {
+		while (true) {
+			try {
+				Thread.sleep(5000);
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				this.act.runOnUiThread(this.tu);
+			}
+		}
+	}
+
 }
