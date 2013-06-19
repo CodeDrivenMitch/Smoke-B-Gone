@@ -3,11 +3,13 @@ package com.goodhearted.smokebegone;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 public class Info_Activity extends Activity {
 
+	MenuHandler handler;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -15,7 +17,8 @@ public class Info_Activity extends Activity {
 		TabHost tabHost=(TabHost)findViewById(R.id.tabHost);
 		tabHost.setup();
 	
-
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
 		TabSpec spec1=tabHost.newTabSpec("Tab 1");
 		spec1.setContent(R.id.tab1);
 		spec1.setIndicator("KWF Informatie");
@@ -27,7 +30,7 @@ public class Info_Activity extends Activity {
 
 		tabHost.addTab(spec1);
 		tabHost.addTab(spec2);
-
+		readyMenu();
 		}
 
 	@Override
@@ -35,6 +38,20 @@ public class Info_Activity extends Activity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.info_, menu);
 		return true;
+	}
+	
+	public boolean onOptionsItemSelected(MenuItem item){
+        SlideHolder x = (SlideHolder) findViewById(R.id.bla);
+        x.toggle();
+        return true;
+
+    }
+	
+	private void readyMenu() {
+		handler = new MenuHandler(this);
+		for(int i = 0; i < MenuHandler.allitems.length; i ++) {
+			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
+		}
 	}
 
 }

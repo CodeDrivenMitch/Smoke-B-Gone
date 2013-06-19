@@ -17,6 +17,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	TextView tv, tvdate, tvsince;
 	Button plus, minus, info;
 	
+	MenuHandler handler;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +26,9 @@ public class MainActivity extends Activity implements OnClickListener {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         
         setContentView(R.layout.activity_main);
+        
+        readyMenu();
+        
         DAO = new SmokeDataSource(this);
         plus = (Button) findViewById(R.id.plusbutton);
         plus.setOnClickListener(this);
@@ -81,6 +86,13 @@ public class MainActivity extends Activity implements OnClickListener {
 			long g = z.getTime() - y.getTime();
 			tvdate.setText("last smoke was at: " + y.toGMTString());
 			tvsince.setText("since: " + g);
+		}
+	}
+	
+	private void readyMenu() {
+		handler = new MenuHandler(this);
+		for(int i = 0; i < MenuHandler.allitems.length; i ++) {
+			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
 		}
 	}
 }
