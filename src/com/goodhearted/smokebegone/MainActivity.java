@@ -35,8 +35,6 @@ public class MainActivity extends Activity implements OnClickListener {
         plus.setOnClickListener(this);
         minus = (Button) findViewById(R.id.minusbutton);
         minus.setOnClickListener(this);
-        info = (Button) findViewById(R.id.info);
-        info.setOnClickListener(this);
         tv = (TextView) findViewById(R.id.tvSMOKES);
         updateTV();
   
