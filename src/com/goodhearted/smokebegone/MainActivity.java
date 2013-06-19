@@ -2,12 +2,12 @@ package com.goodhearted.smokebegone;
 
 import java.util.Date;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,7 +20,9 @@ public class MainActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        
         setContentView(R.layout.activity_main);
         DAO = new SmokeDataSource(this);
         plus = (Button) findViewById(R.id.plusbutton);
@@ -34,6 +36,13 @@ public class MainActivity extends Activity implements OnClickListener {
         tvsince = (TextView) findViewById(R.id.tvSINCE);
         updateTV();
         updateTVDATE();
+    }
+    
+    public boolean onOptionsItemSelected(MenuItem item){
+        SlideHolder x = (SlideHolder) findViewById(R.id.bla);
+        x.toggle();
+        return true;
+
     }
 
 	@Override
