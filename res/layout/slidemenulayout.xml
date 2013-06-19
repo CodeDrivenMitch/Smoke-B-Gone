@@ -9,12 +9,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home" />
+    
+    <Button
+        android:id="@+id/bmHealth"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Health Benefits" />
 
     <Button
         android:id="@+id/bmInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Info" />
+    
 
     <Button
         android:id="@+id/bmSettings"
