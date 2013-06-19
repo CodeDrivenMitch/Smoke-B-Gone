@@ -1,5 +1,6 @@
 package com.goodhearted.smokebegone;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import android.app.Activity;
@@ -91,8 +92,10 @@ public class MainActivity extends Activity implements OnClickListener {
 					PreferenceProvider.keyQD, -1);
 
 		d = new Period(lastsmoketime, (new Date().getTime()));
-		tv.setText("" + d.getString());
-		tvsaved.setText("You saved: " + d.getSave(this));
+		tv.setText("Tijd sinds laatste sigaret: \n" + d.getString());
+		
+		BigDecimal z = new BigDecimal(String.valueOf(d.getSave(this))).setScale(2, BigDecimal.ROUND_HALF_UP);
+		tvsaved.setText("You saved: " + z.toString());
 	}
 
 	private void readyMenu() {
