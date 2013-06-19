@@ -23,26 +23,26 @@
     android:layout_height="fill_parent"
     android:id="@android:id/tabcontent"
      >
-     <LinearLayout
-     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/tab1"
-    android:orientation="vertical"
-    android:paddingTop="60dp"
-     >
-     <TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="100dp" 
-    android:text="This is tab1"
-    android:id="@+id/txt1"
-    />
 
-     <Button
-         android:id="@+id/bSave"
-         android:layout_width="wrap_content"
+     <LinearLayout
+         android:id="@+id/tab1"
+         android:layout_width="fill_parent"
          android:layout_height="wrap_content"
-         android:text="Button" />
-    
+         android:orientation="vertical"
+         android:paddingTop="60dp" >
+
+         <TextView
+             android:id="@+id/txt1"
+             android:layout_width="fill_parent"
+             android:layout_height="100dp"
+             android:layout_weight="1.54"
+             android:text="@string/info_kwf" />
+
+         <Button
+             android:id="@+id/bDoneer"
+             android:layout_width="154dp"
+             android:layout_height="wrap_content"
+             android:text="Doneer hier" />
      </LinearLayout>
      
      <LinearLayout

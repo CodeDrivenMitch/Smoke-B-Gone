@@ -1,9 +1,13 @@
 package com.goodhearted.smokebegone;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
@@ -31,7 +35,17 @@ public class Info_Activity extends Activity {
 		tabHost.addTab(spec1);
 		tabHost.addTab(spec2);
 		readyMenu();
-		}
+		
+		Button donate = (Button)findViewById(R.id.bDoneer);
+		donate.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v)
+			{
+				Uri uri = Uri.parse( "http://helpen.kwfkankerbestrijding.nl/helpen-als-particulier/Pages/ik-geef-geld.aspx" );
+				startActivity( new Intent( Intent.ACTION_VIEW, uri ) );
+			}
+		});}
+			
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

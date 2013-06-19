@@ -24,13 +24,14 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08001d;
-        public static final int bSave=0x7f080005;
+        public static final int action_settings=0x7f08001e;
+        public static final int bDoneer=0x7f080005;
+        public static final int bSave=0x7f08001a;
         public static final int benefits=0x7f080011;
         public static final int bla=0x7f080000;
-        public static final int bmHome=0x7f08001a;
-        public static final int bmInfo=0x7f08001b;
-        public static final int bmSettings=0x7f08001c;
+        public static final int bmHome=0x7f08001b;
+        public static final int bmInfo=0x7f08001c;
+        public static final int bmSettings=0x7f08001d;
         public static final int doneren=0x7f080012;
         public static final int etNumPerPack=0x7f080014;
         public static final int etPrice=0x7f080015;
@@ -75,6 +76,7 @@ public final class R {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
         public static final int hello_world=0x7f050002;
+        public static final int info_kwf=0x7f05000b;
         public static final int title_activity_info=0x7f050004;
         public static final int title_activity_info_=0x7f050009;
         public static final int title_activity_menu=0x7f050003;
