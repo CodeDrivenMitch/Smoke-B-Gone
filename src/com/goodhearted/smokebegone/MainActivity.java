@@ -5,6 +5,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -40,7 +41,7 @@ public class MainActivity extends Activity implements OnClickListener {
         tvdate = (TextView) findViewById(R.id.tvDATE);
         tvsince = (TextView) findViewById(R.id.tvSINCE);
         updateTV();
-        updateTVDATE();
+  
     }
     
     public boolean onOptionsItemSelected(MenuItem item){
@@ -69,24 +70,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		
 		updateTV();
-		updateTVDATE();
 	}
 	
 	private void updateTV() {
 		int total = DAO.getTotalSmokes();
 		tv.setText("Total smokes: " + total);
-	}
-	private void updateTVDATE() {
-		if(DAO.getTotalSmokes() < 1) {
-			tvdate.setText("None smokes yet");
-		} else {
-			Smoke x = DAO.getLastSmoke();
-			Date y = x.getDateDate();
-			Date z = new Date();
-			long g = z.getTime() - y.getTime();
-			tvdate.setText("last smoke was at: " + y.toGMTString());
-			tvsince.setText("since: " + g);
-		}
 	}
 	
 	private void readyMenu() {

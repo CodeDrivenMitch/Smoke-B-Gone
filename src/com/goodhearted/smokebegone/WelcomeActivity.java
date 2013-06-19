@@ -5,7 +5,6 @@ import java.util.Date;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -45,7 +44,7 @@ public class WelcomeActivity extends Activity implements OnClickListener {
 		PreferenceProvider.writeInteger(this, PreferenceProvider.keyCPP, Integer.parseInt(numPack.getText().toString()));
 		PreferenceProvider.writeFloat(this, PreferenceProvider.keyPPP, Float.parseFloat(pricePack.getText().toString()));
 		PreferenceProvider.writeInteger(this, PreferenceProvider.keyCPD, Integer.parseInt(numPack.getText().toString()));
-		PreferenceProvider.writeString(this, PreferenceProvider.keyQD, (new Date()).toGMTString());
+		PreferenceProvider.writeLong(this, PreferenceProvider.keyQD, (new Date()).getTime());
 		return true;
 	}
 
