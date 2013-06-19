@@ -80,12 +80,15 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void updateTV() {
 		Period d;
 		long lastsmoketime;
-		
+
 		Smoke x = DAO.getLastSmoke();
-		
-		if (x != null) lastsmoketime = x.getDateInt();
-		else lastsmoketime = PreferenceProvider.readLong(this, PreferenceProvider.keyQD, -1);
-		
+
+		if (x != null)
+			lastsmoketime = x.getDateInt();
+		else
+			lastsmoketime = PreferenceProvider.readLong(this,
+					PreferenceProvider.keyQD, -1);
+
 		d = new Period(lastsmoketime, (new Date().getTime()));
 		tv.setText("" + d.getString());
 
@@ -97,31 +100,28 @@ public class MainActivity extends Activity implements OnClickListener {
 			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
 		}
 	}
-	
-	
+
 }
 
-
 class TextUpdate extends AsyncTask<Void, Void, Void> {
-	
+
 	MainActivity act;
 	TextView tv;
 	TextUpdater tu;
 
 	private class TextUpdater implements Runnable {
-		
+
 		MainActivity act;
-		
-		public TextUpdater(MainActivity z)
-		{
+
+		public TextUpdater(MainActivity z) {
 			this.act = z;
 		}
-		
+
 		@Override
 		public void run() {
 			this.act.updateTV();
 		}
-		
+
 	}
 
 	public TextUpdate(MainActivity act) {
