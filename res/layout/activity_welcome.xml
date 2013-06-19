@@ -9,7 +9,7 @@
     tools:context=".WelcomeActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvSAVED"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/etPrice"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/tvSAVED"
         android:layout_marginTop="20dp"
         android:text="Price of a pack of cigarettes:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -41,7 +41,7 @@
         android:id="@+id/etPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/tvSAVED"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="15dp"
         android:ems="10"

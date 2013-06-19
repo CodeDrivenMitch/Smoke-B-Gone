@@ -27,7 +27,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView1"
+            android:layout_below="@+id/tvSAVED"
             android:layout_marginTop="19dp"
             android:text="Prijs per pakje:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -43,7 +43,7 @@
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/tvSAVED"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -56,9 +56,9 @@
             android:id="@+id/etsCPP"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignBottom="@+id/tvSAVED"
             android:layout_marginLeft="22dp"
-            android:layout_toRightOf="@+id/textView1"
+            android:layout_toRightOf="@+id/tvSAVED"
             android:ems="10"
             android:inputType="number" >
 

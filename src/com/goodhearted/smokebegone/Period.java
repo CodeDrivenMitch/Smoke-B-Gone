@@ -1,5 +1,7 @@
 package com.goodhearted.smokebegone;
 
+import android.content.Context;
+
 public class Period {
 	public static final int second = 1000;
 	public static final int minute = second * 60;
@@ -27,14 +29,26 @@ public class Period {
 		calculate();
 	}
 
-	
-	public int getSeconds() { return this.seconds; }
-	public int getMinutes() { return this.minutes; }
-	public int getHours() { return this.hours; }
-	public int getDays() { return this.days; }
-	public int getMiliseconds() { return this.miliseconds; }
-	
-	
+	public int getSeconds() {
+		return this.seconds;
+	}
+
+	public int getMinutes() {
+		return this.minutes;
+	}
+
+	public int getHours() {
+		return this.hours;
+	}
+
+	public int getDays() {
+		return this.days;
+	}
+
+	public int getMiliseconds() {
+		return this.miliseconds;
+	}
+
 	public int[] getAll() {
 		int[] returner = new int[5];
 		returner[0] = this.miliseconds;
@@ -44,8 +58,7 @@ public class Period {
 		returner[4] = this.days;
 		return returner;
 	}
-	
-	
+
 	public long getPeriod() {
 		return period;
 	}
@@ -73,26 +86,38 @@ public class Period {
 		// calculate seconds
 		this.seconds = (int) ((rest - rest % second) / second);
 		rest = rest - (this.seconds * second);
-		
-		//save miliseconds
+
+		// save miliseconds
 		this.miliseconds = (int) rest;
 	}
-	
-	public String getString()
-	{
-		if(this.days == 0 && this.hours == 0)
-		{
+
+	public String getString() {
+		if (this.days == 0 && this.hours == 0) {
 			return this.minutes + " minuten en " + this.seconds + " seconden";
-		}
-		else if(this.days == 0) {
+		} else if (this.days == 0) {
 			return this.hours + " uur en " + this.minutes + " minuten";
 		} else {
-			if(this.days > 1) {
+			if (this.days > 1) {
 				return this.days + " dagen en " + this.hours + " uur";
-			}
-			else {
+			} else {
 				return this.days + " dag en " + this.hours + " uur";
 			}
 		}
+	}
+
+	public float getSave(Context c) {
+		int cpp = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPP,
+				-1));
+
+		int cpd = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPD,
+				-1));
+		float ppp = (PreferenceProvider.readFloat(c, PreferenceProvider.keyPPP,
+				-1.0f));
+
+		float p = day / cpd;
+		float pricepercig = ppp / cpp;
+		float numberofcigssaved = this.period / p;
+		
+		return (pricepercig * numberofcigssaved);
 	}
 }

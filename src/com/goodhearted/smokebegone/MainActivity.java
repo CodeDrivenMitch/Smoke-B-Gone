@@ -16,7 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
-	TextView tv, tvdate, tvsince;
+	TextView tv, tvsaved;
 	Button plus, minus, info;
 
 	MenuHandler handler;
@@ -38,6 +38,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		minus = (Button) findViewById(R.id.minusbutton);
 		minus.setOnClickListener(this);
 		tv = (TextView) findViewById(R.id.tvSMOKES);
+		tvsaved = (TextView) findViewById(R.id.tvSAVED);
 		updateTV();
 
 	}
@@ -91,7 +92,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		d = new Period(lastsmoketime, (new Date().getTime()));
 		tv.setText("" + d.getString());
-
+		tvsaved.setText("You saved: " + d.getSave(this));
 	}
 
 	private void readyMenu() {
