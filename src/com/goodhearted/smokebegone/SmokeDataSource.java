@@ -47,6 +47,7 @@ public class SmokeDataSource {
 	}
 	
 	public Smoke getLastSmoke() {
+		if(getAllSmokes().size() == 0) return null;
 		Cursor c = database.rawQuery("SELECT * FROM " + AccountClass.TABLE_SMOKES, null);
 		c.moveToLast();
 		Smoke smoke = cursorToSmoke(c);

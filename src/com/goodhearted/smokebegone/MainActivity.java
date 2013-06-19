@@ -17,45 +17,45 @@ public class MainActivity extends Activity implements OnClickListener {
 	SmokeDataSource DAO;
 	TextView tv, tvdate, tvsince;
 	Button plus, minus, info;
-	
-	MenuHandler handler;
-	
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        getActionBar().setDisplayHomeAsUpEnabled(true);
-        
-        setContentView(R.layout.activity_main);
-        
-        readyMenu();
-        
-        DAO = new SmokeDataSource(this);
-        plus = (Button) findViewById(R.id.plusbutton);
-        plus.setOnClickListener(this);
-        minus = (Button) findViewById(R.id.minusbutton);
-        minus.setOnClickListener(this);
-        tv = (TextView) findViewById(R.id.tvSMOKES);
-        updateTV();
-  
-    }
-    
-    public boolean onOptionsItemSelected(MenuItem item){
-        SlideHolder x = (SlideHolder) findViewById(R.id.bla);
-        x.toggle();
-        return true;
 
-    }
+	MenuHandler handler;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+
+		setContentView(R.layout.activity_main);
+
+		readyMenu();
+
+		DAO = new SmokeDataSource(this);
+		plus = (Button) findViewById(R.id.plusbutton);
+		plus.setOnClickListener(this);
+		minus = (Button) findViewById(R.id.minusbutton);
+		minus.setOnClickListener(this);
+		tv = (TextView) findViewById(R.id.tvSMOKES);
+		updateTV();
+
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		SlideHolder x = (SlideHolder) findViewById(R.id.bla);
+		x.toggle();
+		return true;
+
+	}
 
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-		switch(arg0.getId()) {
+		switch (arg0.getId()) {
 		case R.id.plusbutton:
 			DAO.createSmoke();
 			break;
 		case R.id.minusbutton:
-			if(DAO.getTotalSmokes() > 0) {
+			if (DAO.getTotalSmokes() > 0) {
 				DAO.removeLastSmoke(DAO.getLastSmoke());
 			}
 			break;
@@ -64,18 +64,27 @@ public class MainActivity extends Activity implements OnClickListener {
 			this.startActivity(i);
 			break;
 		}
-		
+
 		updateTV();
 	}
-	
+
 	private void updateTV() {
-		int total = DAO.getTotalSmokes();
-		tv.setText("Total smokes: " + total);
+		Period d;
+		long lastsmoketime;
+		
+		Smoke x = DAO.getLastSmoke();
+		
+		if (x != null) lastsmoketime = x.getDateInt();
+		else lastsmoketime = PreferenceProvider.readLong(this, PreferenceProvider.keyQD, -1);
+		
+		d = new Period(lastsmoketime, (new Date().getTime()));
+		tv.setText("" + d.getString());
+
 	}
-	
+
 	private void readyMenu() {
 		handler = new MenuHandler(this);
-		for(int i = 0; i < MenuHandler.allitems.length; i ++) {
+		for (int i = 0; i < MenuHandler.allitems.length; i++) {
 			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
 		}
 	}
