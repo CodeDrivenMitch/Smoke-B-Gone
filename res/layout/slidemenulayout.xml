@@ -2,29 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="150dp"
     android:layout_height="match_parent"
+    android:background="#000000"
     android:orientation="vertical" >
 
     <Button
         android:id="@+id/bmHome"
+        style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Home" />
-    
+
     <Button
         android:id="@+id/bmHealth"
+        style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Health Benefits" />
 
     <Button
         android:id="@+id/bmInfo"
+        style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Info" />
-    
 
     <Button
         android:id="@+id/bmSettings"
+        style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Settings" />

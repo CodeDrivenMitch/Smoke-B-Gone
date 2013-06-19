@@ -70,10 +70,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				DAO.removeLastSmoke(DAO.getLastSmoke());
 			}
 			break;
-		case R.id.info:
-			Intent i = new Intent(this, Info_Activity.class);
-			this.startActivity(i);
-			break;
+		
 		}
 
 		updateTV();
