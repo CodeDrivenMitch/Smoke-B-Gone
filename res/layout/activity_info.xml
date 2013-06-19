@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
+<com.goodhearted.smokebegone.SlideHolder xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/bla">"
+
+    <!-- Here is any view that will represent your side menu. Don't forget to provide width! -->
+
+    <include  layout="@layout/slidemenulayout" android:id="@+id/id" />
 
     <TabHost android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -27,7 +35,13 @@
     android:layout_height="100dp" 
     android:text="This is tab1"
     android:id="@+id/txt1"
-    />    
+    />
+
+     <Button
+         android:id="@+id/bSave"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Button" />
     
      </LinearLayout>
      
@@ -51,3 +65,4 @@
      </FrameLayout>
     
     </TabHost>
+    </com.goodhearted.smokebegone.SlideHolder>

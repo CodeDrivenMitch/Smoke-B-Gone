@@ -1,37 +1,80 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.goodhearted.smokebegone.SlideHolder xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity" >
+    android:id="@+id/bla">"
 
-    <Button
-        android:id="@+id/minusbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="+" />
+    <!-- Here is any view that will represent your side menu. Don't forget to provide width! -->
 
-    <Button
-        android:id="@+id/plusbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/minusbutton"
-        android:layout_marginLeft="46dp"
-        android:layout_toRightOf="@+id/minusbutton"
-        android:text="-" />
+    <include  layout="@layout/slidemenulayout" android:id="@+id/id" />
 
-    <TextView
-        android:id="@+id/tvSMOKES"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/plusbutton"
-        android:layout_alignLeft="@+id/minusbutton"
-        android:layout_marginLeft="18dp"
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <!-- And here is your main layout -->
 
-</RelativeLayout>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/tvSMOKES"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/plusbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/tvSMOKES"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="33dp"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/minusbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/plusbutton"
+            android:layout_marginLeft="17dp"
+            android:layout_toRightOf="@+id/plusbutton"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Info" />
+
+        <TextView
+            android:id="@+id/tvDATE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvSMOKES"
+            android:layout_below="@+id/plusbutton"
+            android:layout_marginTop="27dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvSINCE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/info"
+            android:layout_alignLeft="@+id/tvDATE"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+</com.goodhearted.smokebegone.SlideHolder>
