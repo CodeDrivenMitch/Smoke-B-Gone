@@ -2,6 +2,8 @@
 ## Eclipse
 #################
 
+R.java
+/gen/
 *.pydevproject
 .project
 .metadata
