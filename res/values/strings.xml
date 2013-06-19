@@ -14,5 +14,6 @@
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="info_kwf">KWF Kankerbestrijding is een Nederlandse stichting die zich inzet voor bestrijding van kanker door middel van wetenschappelijk onderzoek, voorlichting, patiëntenondersteuning en fondsenwerving. Dat gebeurt samen met vrijwilligers, donateurs, patiënten, artsen en onderzoekers. De officiële naam van de stichting is Koningin Wilhelmina Fonds voor de Nederlandse Kankerbestrijding. Sinds november 2003 werkt de stichting onder de naam KWF Kankerbestrijding.</string>
     <string name="donate_button">Doneer Hier</string>
+    <string name="title_activity_settings">SettingsActivity</string>
 
 </resources>

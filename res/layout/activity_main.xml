@@ -1,12 +1,15 @@
 <com.goodhearted.smokebegone.SlideHolder xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bla"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/bla">"
+    android:layout_height="match_parent" >
+
 
     <!-- Here is any view that will represent your side menu. Don't forget to provide width! -->
 
-    <include  layout="@layout/slidemenulayout" android:id="@+id/id" />
+    <include
+        android:id="@+id/id"
+        layout="@layout/slidemenulayout" />
 
     <!-- And here is your main layout -->
 

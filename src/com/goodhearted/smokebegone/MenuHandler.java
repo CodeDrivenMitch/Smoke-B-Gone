@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 public class MenuHandler implements OnClickListener {
 
 	public static final int[] allitems = {R.id.bmHome, R.id.bmInfo, R.id.bmSettings};
-	public static final Class[] actions = {MainActivity.class, Info_Activity.class, WelcomeActivity.class};
+	public static final Class[] actions = {MainActivity.class, Info_Activity.class, SettingsActivity.class};
 	
 	private Activity mother_activity;
 	
