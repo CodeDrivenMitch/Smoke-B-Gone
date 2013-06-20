@@ -1,6 +1,9 @@
 package com.goodhearted.smokebegone;
 
+import java.math.BigDecimal;
+
 import android.content.Context;
+import android.util.Log;
 
 public class Period {
 	public static final int second = 1000;
@@ -159,10 +162,10 @@ public class Period {
 	
 	public int getHealthBenefitProgress(int option)
 	{
-		float progress = this.period / benefits[option] * 100;
-		int progress_i = (int) progress;
-		if(progress_i > 100) progress_i = 100;
+		BigDecimal i = new BigDecimal( this.period / benefits[option] * 100).setScale(5, BigDecimal.ROUND_HALF_UP);
+		int j = i.intValue();
+		if(j > 100) return 100;
+		return j;
 		
-		return progress_i;
 	}
 }
