@@ -7,21 +7,42 @@ public class Period {
 	public static final int minute = second * 60;
 	public static final int hour = minute * 60;
 	public static final int day = hour * 24;
-	public static final int year = 365*day;
-	
-	// http://whyquit.com/whyquit/a_benefits_time_table.html
-	public static final int[] benefits = { 
-		20*minute, //Your blood pressure, pulse rate and the temperature of your hands and feet have returned to normal.
-		8*hour, //Remaining nicotine in your bloodstream will have fallen to 6.25% of normal peak daily levels, a 93.75% reduction.
-		12*hour, //Your blood oxygen level will have increased to normal and carbon monoxide levels will have dropped to normal.
-		24*hour, //Anxieties have peaked in intensity and within two weeks should return to near pre-cessation levels.
-		48*hour, //Damaged nerve endings have started to regrow and your sense of smell and taste are beginning to return to normal. Cessation anger and irritability will have peaked.
-		72*hour, //Your entire body will test 100% nicotine-free and over 90% of all nicotine metabolites (the chemicals it breaks down into) will now have passed from your body via your urine. 
-		14*day, //Recovery has likely progressed to the point where your addiction is no longer doing the talking. Blood circulation in your gums and teeth are now similar to that of a non-user.
-		21*day, //Brain acetylcholine receptor counts that were up-regulated in response to nicotine's presence have now down-regulated and receptor binding has returned to levels seen in the brains of non-smokers.
-		56*day //Your circulation has substantially improved. Walking has become easier. Your chronic cough, if any, has likely disappeared.
-	};
+	public static final int year = 365 * day;
 
+	// http://whyquit.com/whyquit/a_benefits_time_table.html
+	public static final int[] benefits = { 20 * minute, // Your blood pressure,
+														// pulse rate and the
+														// temperature of your
+														// hands and feet have
+														// returned to normal.
+			8 * hour, // Remaining nicotine in your bloodstream will have fallen
+						// to 6.25% of normal peak daily levels, a 93.75%
+						// reduction.
+			12 * hour, // Your blood oxygen level will have increased to normal
+						// and carbon monoxide levels will have dropped to
+						// normal.
+			24 * hour, // Anxieties have peaked in intensity and within two
+						// weeks should return to near pre-cessation levels.
+			48 * hour, // Damaged nerve endings have started to regrow and your
+						// sense of smell and taste are beginning to return to
+						// normal. Cessation anger and irritability will have
+						// peaked.
+			72 * hour, // Your entire body will test 100% nicotine-free and over
+						// 90% of all nicotine metabolites (the chemicals it
+						// breaks down into) will now have passed from your body
+						// via your urine.
+			14 * day, // Recovery has likely progressed to the point where your
+						// addiction is no longer doing the talking. Blood
+						// circulation in your gums and teeth are now similar to
+						// that of a non-user.
+			21 * day, // Brain acetylcholine receptor counts that were
+						// up-regulated in response to nicotine's presence have
+						// now down-regulated and receptor binding has returned
+						// to levels seen in the brains of non-smokers.
+			56 * day // Your circulation has substantially improved. Walking has
+						// become easier. Your chronic cough, if any, has likely
+						// disappeared.
+	};
 
 	private int seconds;
 	private int minutes;
@@ -132,9 +153,16 @@ public class Period {
 		float p = day / cpd;
 		float pricepercig = ppp / cpp;
 		float numberofcigssaved = this.period / p - smoked;
-		
+
 		return (pricepercig * numberofcigssaved);
 	}
 	
-	
+	public int getHealthBenefitProgress(int option)
+	{
+		float progress = this.period / benefits[option] * 100;
+		int progress_i = (int) progress;
+		if(progress_i > 100) progress_i = 100;
+		
+		return progress_i;
+	}
 }
