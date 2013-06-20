@@ -105,7 +105,7 @@ public class Period {
 		}
 	}
 
-	public float getSave(Context c) {
+	public float getSave(Context c, int smoked) {
 		int cpp = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPP,
 				-1));
 
@@ -116,7 +116,7 @@ public class Period {
 
 		float p = day / cpd;
 		float pricepercig = ppp / cpp;
-		float numberofcigssaved = this.period / p;
+		float numberofcigssaved = this.period / p - smoked;
 		
 		return (pricepercig * numberofcigssaved);
 	}

@@ -4,10 +4,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.format.Time;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -70,29 +68,36 @@ public class MainActivity extends Activity implements OnClickListener {
 				DAO.removeLastSmoke(DAO.getLastSmoke());
 			}
 			break;
-		
+
 		}
 
 		updateTV();
 	}
 
 	public void updateTV() {
-		Period d;
-		long lastsmoketime;
+		Period d, e;
 
 		Smoke x = DAO.getLastSmoke();
 
-		if (x != null)
-			lastsmoketime = x.getDateInt();
-		else
-			lastsmoketime = PreferenceProvider.readLong(this,
-					PreferenceProvider.keyQD, -1);
-
-		d = new Period(lastsmoketime, (new Date().getTime()));
-		tv.setText("Tijd sinds laatste sigaret: \n" + d.getString());
+		long quitsmoketime = PreferenceProvider.readLong(this,
+				PreferenceProvider.keyQD, -1);
+		if(x != null){
+		e = new Period(x.getDateInt(), (new Date()).getTime());
+		} else {
+			e = new Period(quitsmoketime, (new Date()).getTime());
+		}
+		tv.setText("Tijd sinds laatste sigaret: \n" + e.getString());
 		
-		BigDecimal z = new BigDecimal(String.valueOf(d.getSave(this))).setScale(2, BigDecimal.ROUND_HALF_UP);
-		tvsaved.setText("You saved: " + z.toString());
+		
+		d = new Period(quitsmoketime, (new Date().getTime()));
+		float savings = d.getSave(this, DAO.getTotalSmokes());
+		int scale = 0;
+		if (savings < 100) {
+			scale = 2;
+		}
+		BigDecimal z = new BigDecimal(String.valueOf(savings)).setScale(scale,
+				BigDecimal.ROUND_HALF_UP);
+		tvsaved.setText("You saved: " + z.toString() + " euro");
 	}
 
 	private void readyMenu() {
@@ -135,7 +140,7 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 	protected Void doInBackground(Void... arg0) {
 		while (true) {
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(1000);
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
