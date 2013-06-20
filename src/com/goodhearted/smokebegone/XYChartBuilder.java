@@ -95,6 +95,7 @@ public class XYChartBuilder extends Activity {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onResume() {
 		super.onResume();

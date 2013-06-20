@@ -14,8 +14,6 @@ public class SmokeDataSource {
 
 	private SQLiteDatabase database;
 	private AccountClass dbHelper;
-	private String[] allColumns = { AccountClass.COLUMN_ID,
-			AccountClass.COLUMN_DATE };
 
 	public SmokeDataSource(Context context) {
 		dbHelper = new AccountClass(context);
@@ -40,7 +38,7 @@ public class SmokeDataSource {
 		long d_s = d.getTime();
 		ContentValues values = new ContentValues();
 	    values.put(AccountClass.COLUMN_DATE, d_s);
-	    long insertId = database.insert(AccountClass.TABLE_SMOKES, null,
+	    database.insert(AccountClass.TABLE_SMOKES, null,
 	        values);
 		
 	}

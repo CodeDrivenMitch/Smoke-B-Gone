@@ -2,9 +2,8 @@ package com.goodhearted.smokebegone;
 
 import java.util.Date;
 
-import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 

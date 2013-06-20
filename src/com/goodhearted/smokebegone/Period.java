@@ -1,9 +1,6 @@
 package com.goodhearted.smokebegone;
 
-import java.math.BigDecimal;
-
 import android.content.Context;
-import android.util.Log;
 
 public class Period {
 	public static final int second = 1000;
