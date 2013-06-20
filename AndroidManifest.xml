@@ -60,6 +60,10 @@
             android:name="com.goodhearted.smokebegone.XYChartBuilder"
             android:label="@string/title_activity_xychart_builder" >
         </activity>
+        <activity
+            android:name="com.goodhearted.smokebegone.MoneyActivity"
+            android:label="@string/title_activity_money" >
+        </activity>
     </application>
 
 </manifest>

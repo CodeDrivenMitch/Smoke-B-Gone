@@ -18,5 +18,6 @@
     <string name="title_activity_health">HealthActivity</string>
     <string name="title_activity_chart">ChartActivity</string>
     <string name="title_activity_xychart_builder">XYChartBuilder</string>
+    <string name="title_activity_money">MoneyActivity</string>
 
 </resources>
