@@ -1,13 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical" android:layout_width="fill_parent"
-              android:layout_height="fill_parent">
+<com.goodhearted.smokebegone.SlideHolder xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bla"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
-    
+    <!-- Here is any view that will represent your side menu. Don't forget to provide width! -->
 
-    <LinearLayout android:id="@+id/chart" android:orientation="horizontal"
-                  android:layout_width="fill_parent" android:layout_height="0dip" android:layout_weight="1"/>
+    <include layout="@layout/slidemenulayout" />
 
-    
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-</LinearLayout>
+        <LinearLayout
+            android:id="@+id/chart"
+            android:layout_width="fill_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:orientation="horizontal" />
+    </LinearLayout>
+
+</com.goodhearted.smokebegone.SlideHolder>

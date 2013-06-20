@@ -15,6 +15,7 @@ import org.achartengine.renderer.XYSeriesRenderer;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 
@@ -27,6 +28,8 @@ public class XYChartBuilder extends Activity {
 	private GraphicalView mChartView;
 
 	private SmokeDataSource DAO;
+	private MenuHandler handler;
+
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
@@ -56,17 +59,20 @@ public class XYChartBuilder extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_xychart_builder);
-
+		getActionBar().setDisplayHomeAsUpEnabled(true);
+		readyMenu();
+		
 		// set some properties on the main renderer
 		mRenderer.setApplyBackgroundColor(true);
 		mRenderer.setBackgroundColor(Color.argb(100, 50, 50, 50));
 		mRenderer.setAxisTitleTextSize(16);
 		mRenderer.setChartTitleTextSize(20);
-		
+
 		mRenderer.setLabelsTextSize(15);
 		mRenderer.setLegendTextSize(15);
 		mRenderer.setMargins(new int[] { 20, 30, 15, 20 });
 		mRenderer.setZoomButtonsVisible(false);
+
 		mRenderer.setPointSize(5);
 
 		String seriesTitle = "Smokes for the past 30 days";
@@ -81,11 +87,12 @@ public class XYChartBuilder extends Activity {
 		renderer.setPointStyle(PointStyle.CIRCLE);
 		renderer.setFillPoints(true);
 		renderer.setDisplayChartValues(true);
-		
+
 		renderer.setDisplayChartValuesDistance(10);
 		mCurrentRenderer = renderer;
-		
+
 		DAO = new SmokeDataSource(this);
+
 	}
 
 	@Override
@@ -96,7 +103,7 @@ public class XYChartBuilder extends Activity {
 			mChartView = ChartFactory.getLineChartView(this, mDataset,
 					mRenderer);
 			// enable the chart click events
-			
+
 			mRenderer.setSelectableBuffer(10);
 			layout.addView(mChartView, new LayoutParams(
 					LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
@@ -105,7 +112,7 @@ public class XYChartBuilder extends Activity {
 		}
 		mRenderer.setXAxisMax(30);
 		mRenderer.setXAxisMin(-1);
-		
+
 		mRenderer.setYAxisMin(0);
 
 		getData();
@@ -115,56 +122,71 @@ public class XYChartBuilder extends Activity {
 
 	private void getData() {
 		int leapyearcompat = 0;
-		
+
 		List<Smoke> allsmokes = DAO.getAllSmokes();
 		int[] days = new int[allsmokes.size()];
 		int[] smokesperday = new int[30];
-		
-		for(int i = 0; i < 30; i++)
-		{
+
+		for (int i = 0; i < 30; i++) {
 			smokesperday[i] = 0;
 		}
-		
+
 		GregorianCalendar b = (new GregorianCalendar());
 		int today = b.get(Calendar.DAY_OF_YEAR);
-		b.setTimeInMillis(PreferenceProvider.readLong(this, PreferenceProvider.keyQD, -1));
+		b.setTimeInMillis(PreferenceProvider.readLong(this,
+				PreferenceProvider.keyQD, -1));
 		int quitday = b.get(Calendar.DAY_OF_YEAR);
-		
-		
-		for(int i = 0; i < allsmokes.size(); i++) {
+
+		for (int i = 0; i < allsmokes.size(); i++) {
 			b.setTimeInMillis((allsmokes.get(i).getDateInt()));
 			days[i] = b.get(Calendar.DAY_OF_YEAR);
-			if(b.isLeapYear(b.get(Calendar.YEAR))) leapyearcompat = 0;
+			if (b.isLeapYear(b.get(Calendar.YEAR)))
+				leapyearcompat = 0;
 		}
-		
-		for(int i = 0; i < days.length; i++)
-		{
+
+		for (int i = 0; i < days.length; i++) {
 			int dayback = days[i] - today;
-			if(dayback < 0) {
-				dayback += (365-leapyearcompat);
+			if (dayback < 0) {
+				dayback += (365 - leapyearcompat);
 			}
 			smokesperday[dayback] += 1;
 		}
-		
-		int oldsmokesperday = PreferenceProvider.readInteger(this, PreferenceProvider.keyCPD, -1);
-		
-		for(int i = 0; i < 30; i++)
-		{
-			if(i > today - quitday) mCurrentSeries.add(i, oldsmokesperday);
-			else mCurrentSeries.add(i, smokesperday[i]);
+
+		int oldsmokesperday = PreferenceProvider.readInteger(this,
+				PreferenceProvider.keyCPD, -1);
+
+		for (int i = 0; i < 30; i++) {
+			if (i > today - quitday)
+				mCurrentSeries.add(i, oldsmokesperday);
+			else
+				mCurrentSeries.add(i, smokesperday[i]);
 		}
-		
+
 		int highestpoint = 1;
-		for(int i = 0; i < 30; i++)
-		{
-			if(smokesperday[i] > highestpoint) highestpoint = smokesperday[i];
+		for (int i = 0; i < 30; i++) {
+			if (smokesperday[i] > highestpoint)
+				highestpoint = smokesperday[i];
 		}
-		if(oldsmokesperday > highestpoint) highestpoint = oldsmokesperday;
-		
+		if (oldsmokesperday > highestpoint)
+			highestpoint = oldsmokesperday;
+
 		highestpoint += 2;
 		mRenderer.setYAxisMax(highestpoint);
-		
-		
+
+	}
+
+	public boolean onOptionsItemSelected(MenuItem item) {
+		SlideHolder x = (SlideHolder) findViewById(R.id.bla);
+		x.toggle();
+		return true;
+
+	}
+
+	private void readyMenu() {
+		handler = new MenuHandler(this);
+		for (int i = 0; i < MenuHandler.allitems.length; i++) {
+			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
+		}
 	}
 
 }
