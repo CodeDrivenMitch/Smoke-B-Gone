@@ -22,9 +22,34 @@
         tools:context=".MoneyActivity" >
 
         <TextView
+            android:id="@+id/tvSavePerDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvSavePerWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvSavePerDay"
+            android:layout_below="@+id/tvSavePerDay"
+            android:layout_marginTop="28dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/tvSavePerYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvSavePerWeek"
+            android:layout_below="@+id/tvSavePerWeek"
+            android:layout_marginTop="38dp"
+            android:text="Large Text"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
     </RelativeLayout>
 
 </com.goodhearted.smokebegone.SlideHolder>

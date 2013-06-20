@@ -10,7 +10,8 @@ public class Period {
 	public static final int minute = second * 60;
 	public static final int hour = minute * 60;
 	public static final int day = hour * 24;
-	public static final int year = 365 * day;
+	public static final int week = day * 7;
+	public static final long year = 365 * day;
 
 	// http://whyquit.com/whyquit/a_benefits_time_table.html
 	public static final int[] benefits = { 20 * minute, // Your blood pressure,
@@ -160,12 +161,4 @@ public class Period {
 		return (pricepercig * numberofcigssaved);
 	}
 	
-	public int getHealthBenefitProgress(int option)
-	{
-		BigDecimal i = new BigDecimal( this.period / benefits[option] * 100).setScale(5, BigDecimal.ROUND_HALF_UP);
-		int j = i.intValue();
-		if(j > 100) return 100;
-		return j;
-		
-	}
 }
