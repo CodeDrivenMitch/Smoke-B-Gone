@@ -14,8 +14,8 @@ public class HealthActivity extends Activity {
 
 	SmokeDataSource DAO;
 
-	private static final int[] progress_sls_bid = { R.id.progressBar1, R.id.progressBar3 };
-	private static final int[] progress_sq_bid = { R.id.progressBar2,  R.id.progressBar4 };
+	private static final int[] progress_sls_bid = { R.id.progressBar1, R.id.progressBar3, R.id.progressBar5, R.id.progressBar7, R.id.progressBar9, R.id.progressBar11, R.id.progressBar13, R.id.progressBar15, R.id.progressBar17 };
+	private static final int[] progress_sq_bid = { R.id.progressBar2,  R.id.progressBar4, R.id.progressBar6, R.id.progressBar8, R.id.progressBar10, R.id.progressBar12, R.id.progressBar14, R.id.progressBar16, R.id.progressBar18 };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
