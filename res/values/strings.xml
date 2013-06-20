@@ -16,5 +16,7 @@
     <string name="donate_button">Doneer Hier</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_health">HealthActivity</string>
+    <string name="title_activity_chart">ChartActivity</string>
+    <string name="title_activity_xychart_builder">XYChartBuilder</string>
 
 </resources>

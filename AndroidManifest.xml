@@ -7,8 +7,8 @@
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="17" />
-    
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -51,6 +51,14 @@
         <activity
             android:name="com.goodhearted.smokebegone.HealthActivity"
             android:label="@string/title_activity_health" >
+        </activity>
+        <activity
+            android:name="com.goodhearted.smokebegone.ChartActivity"
+            android:label="@string/title_activity_chart" >
+        </activity>
+        <activity
+            android:name="com.goodhearted.smokebegone.XYChartBuilder"
+            android:label="@string/title_activity_xychart_builder" >
         </activity>
     </application>
 

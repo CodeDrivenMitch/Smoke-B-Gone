@@ -32,5 +32,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Settings" />
+    <Button
+        android:id="@+id/bmChart"
+        style="@style/MenuTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chart test" />
 
 </LinearLayout>
