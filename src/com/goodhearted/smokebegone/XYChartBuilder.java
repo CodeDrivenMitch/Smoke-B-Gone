@@ -146,7 +146,7 @@ public class XYChartBuilder extends Activity {
 		}
 
 		for (int i = 0; i < days.length; i++) {
-			int dayback = days[i] - today;
+			int dayback = today - days[i];
 			if (dayback < 0) {
 				dayback += (365 - leapyearcompat);
 			}
