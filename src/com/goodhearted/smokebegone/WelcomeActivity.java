@@ -20,7 +20,7 @@ public class WelcomeActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
 
-		save = (Button) findViewById(R.id.bSave);
+		save = (Button) findViewById(R.id.btSave);
 		save.setOnClickListener(this);
 
 		numPack = (EditText) findViewById(R.id.etNumPerPack);
@@ -31,7 +31,7 @@ public class WelcomeActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
-		case R.id.bSave:
+		case R.id.btSave:
 			if (saveOptions()) {
 				Intent i = new Intent(this, MainActivity.class);
 				this.startActivity(i);
