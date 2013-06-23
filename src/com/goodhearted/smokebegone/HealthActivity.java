@@ -44,8 +44,8 @@ public class HealthActivity extends Activity {
 
 	private void readyMenu() {
 		handler = new MenuHandler(this);
-		for (int i = 0; i < MenuHandler.allitems.length; i++) {
-			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
+		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
+			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(handler);
 		}
 	}
 

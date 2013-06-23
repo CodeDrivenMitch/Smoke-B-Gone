@@ -31,7 +31,7 @@ public class SplashActivity extends Activity {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					} finally {
-						startActivity(new Intent(SplashActivity.this, MainActivity.class));
+						MenuHandler.launchClass(SplashActivity.this, "MainActivity");
 					}
 				}
 			};

@@ -20,17 +20,22 @@ public class MenuHandler implements OnClickListener {
 		for(int i = 0; i < allMenuItems.length; i++)
 		{
 			if(viewItem.getId() == allMenuItems[i]) {
-				Class<?> launchingClass = null;
-				try {
-					launchingClass = Class.forName("com.goodhearted.smokebegone." + allMenuActions[i]);
-				} catch (ClassNotFoundException e) {
-					e.printStackTrace();
-				}
-				if(launchingClass != null) {
-					Intent j = new Intent(motherActivity, launchingClass);
-					motherActivity.startActivity(j);
-				}
+				MenuHandler.launchClass(motherActivity, allMenuActions[i]);
 			}
+		}
+	}
+	
+	public static void launchClass(Activity motherActivity, String selectedClass)
+	{
+		Class<?> launchingClass = null;
+		try {
+			launchingClass = Class.forName("com.goodhearted.smokebegone." + selectedClass);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		if(launchingClass != null) {
+			Intent j = new Intent(motherActivity, launchingClass);
+			motherActivity.startActivity(j);
 		}
 	}
 

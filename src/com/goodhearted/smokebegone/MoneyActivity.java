@@ -38,16 +38,16 @@ public class MoneyActivity extends Activity {
 
 	private void readyMenu() {
 		handler = new MenuHandler(this);
-		for (int i = 0; i < MenuHandler.allitems.length; i++) {
-			findViewById(MenuHandler.allitems[i]).setOnClickListener(handler);
+		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
+			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(handler);
 		}
 	}
 	
 	private void calculate()
 	{
-		float saveperday = (new Period((long)((new Date()).getTime())-Period.day, new Date().getTime())).getSave(this, DAO.getTotalSmokes());
+		float saveperday = (new Period((long)((new Date()).getTime())-Period.day, new Date().getTime())).getSave(this, 0);
 		day.setText("What you save per day: " + saveperday);
-		week.setText("What you save per day: " + saveperday*7);
-		year.setText("What you save per day: " + saveperday*365);
+		week.setText("What you save per week: " + saveperday*7);
+		year.setText("What you save per year: " + saveperday*365);
 	}
 }
