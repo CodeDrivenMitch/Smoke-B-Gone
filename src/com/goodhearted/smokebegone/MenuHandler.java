@@ -7,28 +7,28 @@ import android.view.View.OnClickListener;
 
 public class MenuHandler implements OnClickListener {
 
-	public static final int[] allitems = {R.id.bmHome, R.id.bmInfo, R.id.bmSettings, R.id.bmHealth, R.id.bmChart, R.id.bmMoney};
-	public static final String[] actions = {"MainActivity", "InfoActivity", "SettingsActivity", "HealthActivity", "XYChartBuilder", "MoneyActivity"};
+	public static final int[] allMenuItems = {R.id.bmHome, R.id.bmInfo, R.id.bmSettings, R.id.bmHealth, R.id.bmChart, R.id.bmMoney};
+	public static final String[] allMenuActions = {"MainActivity", "InfoActivity", "SettingsActivity", "HealthActivity", "XYChartBuilder", "MoneyActivity"};
 	
-	private Activity mother_activity;
+	private Activity motherActivity;
 	
 	public MenuHandler(Activity activity) {
-		mother_activity = activity;
+		motherActivity = activity;
 	}
 	@Override
-	public void onClick(View arg0) {
-		for(int i = 0; i < allitems.length; i++)
+	public void onClick(View viewItem) {
+		for(int i = 0; i < allMenuItems.length; i++)
 		{
-			if(arg0.getId() == allitems[i]) {
-				Class<?> needed = null;
+			if(viewItem.getId() == allMenuItems[i]) {
+				Class<?> launchingClass = null;
 				try {
-					needed = Class.forName("com.goodhearted.smokebegone." + actions[i]);
+					launchingClass = Class.forName("com.goodhearted.smokebegone." + allMenuActions[i]);
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				}
-				if(needed != null) {
-					Intent j = new Intent(mother_activity, needed);
-					mother_activity.startActivity(j);
+				if(launchingClass != null) {
+					Intent j = new Intent(motherActivity, launchingClass);
+					motherActivity.startActivity(j);
 				}
 			}
 		}
