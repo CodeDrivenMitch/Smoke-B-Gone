@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
-public class Info_Activity extends Activity {
+public class InfoActivity extends Activity {
 
 	MenuHandler handler;
 	@Override
