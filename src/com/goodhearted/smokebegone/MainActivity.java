@@ -6,6 +6,7 @@ import java.util.Date;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -71,7 +72,13 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
 		case R.id.btStillSmoked:
-			DAO.createSmoke();
+			Smoke x = DAO.getLastSmoke();
+			if(x != null) {
+				Period p = new Period(x.getDateInt(), (new Date()).getTime());
+				if(p.getPeriod() > 1000) DAO.createSmoke();
+			} else {
+				DAO.createSmoke();
+			}
 			break;
 		}
 
@@ -151,7 +158,7 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 			try {
 				Thread.sleep(1000);
 			} catch (Exception e) {
-				e.printStackTrace();
+				Log.d("SMB_THREAD", "MainActivity info update interrupted!");
 			} finally {
 				this.act.runOnUiThread(this.tu);
 			}
