@@ -20,9 +20,9 @@ public class SplashActivity extends Activity {
 		setContentView(R.layout.activity_splash);
 		
 		if(PreferenceProvider.readLong(this, PreferenceProvider.keyQD, -1) == -1) {  // check if the splash was already shown, if this is the case skip splash			
-			startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
+			MenuHandler.launchClass(SplashActivity.this, "WelcomeActivity");
 		} else if(already_ran){
-			startActivity(new Intent(SplashActivity.this, MainActivity.class));
+			MenuHandler.launchClass(SplashActivity.this, "MainActivity");
 		} else {
 			Thread timer = new Thread(){
 				public void run() {
