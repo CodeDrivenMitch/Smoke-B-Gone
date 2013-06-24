@@ -32,7 +32,18 @@
    	<!-- General strings -->
    	
    	<string name="gSave">Opslaan</string>
+   	<string name="gDay">Dag</string>
+   	<string name="gDayMultiple">Dagen</string>
+   	<string name="gHour">Uur</string>
+   	<string name="gMinute">Minuut</string>
+   	<string name="gMinuteMultiple">Minuten</string>
+   	<string name="gSecond">Seconde</string>
+   	<string name="gSecondMultiple">Seconden</string>
+   	<string name="gZero">0</string>
    	
+   	<!-- Main Activity strings -->
+   	
+   	<string name="maButtonSmoked">Ik heb toch gerookt!</string>
    	
    	<!-- Image Descriptions -->
    	<string name="gBackgroundImage">Achtergrond</string>

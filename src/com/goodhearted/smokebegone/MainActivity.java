@@ -15,8 +15,8 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
-	TextView tv, tvsaved;
-	Button plus, minus, info;
+	TextView tvDays, tvHours, tvMinutes, tvSeconds, tvDaysSuffix, tvHoursSuffix, tvMinutesSuffix, tvSecondsSuffix;
+	Button plus, info;
 
 	MenuHandler handler;
 	TextUpdate tu;
@@ -32,12 +32,12 @@ public class MainActivity extends Activity implements OnClickListener {
 		readyMenu();
 
 		DAO = new SmokeDataSource(this);
-		plus = (Button) findViewById(R.id.plusbutton);
+		plus = (Button) findViewById(R.id.btStillSmoked);
 		plus.setOnClickListener(this);
-		minus = (Button) findViewById(R.id.minusbutton);
-		minus.setOnClickListener(this);
-		tv = (TextView) findViewById(R.id.tvSMOKES);
-		tvsaved = (TextView) findViewById(R.id.tvSAVED);
+		tvDays = (TextView) findViewById(R.id.tvDayCount);
+		tvHours = (TextView) findViewById(R.id.tvHourCount);
+		tvMinutes = (TextView) findViewById(R.id.tvMinuteCount);
+		tvSeconds = (TextView) findViewById(R.id.tvSecondCount);
 		updateTV();
 
 	}
@@ -60,15 +60,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 		switch (arg0.getId()) {
-		case R.id.plusbutton:
+		case R.id.btStillSmoked:
 			DAO.createSmoke();
 			break;
-		case R.id.minusbutton:
-			if (DAO.getTotalSmokes() > 0) {
-				DAO.removeLastSmoke(DAO.getLastSmoke());
-			}
-			break;
-
 		}
 
 		updateTV();
@@ -86,7 +80,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		} else {
 			e = new Period(quitsmoketime, (new Date()).getTime());
 		}
-		tv.setText("Tijd sinds laatste sigaret: \n" + e.getString());
+		
+		tvDays.setText(Integer.toString(e.getDays()));
+		tvHours.setText(Integer.toString(e.getHours()));
+		tvMinutes.setText(Integer.toString(e.getMinutes()));
+		tvSeconds.setText(Integer.toString(e.getSeconds()));
 		
 		
 		d = new Period(quitsmoketime, (new Date().getTime()));
@@ -97,7 +95,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		BigDecimal z = new BigDecimal(String.valueOf(savings)).setScale(scale,
 				BigDecimal.ROUND_HALF_UP);
-		tvsaved.setText("You saved: " + z.toString() + " euro");
+		
 	}
 
 	private void readyMenu() {
