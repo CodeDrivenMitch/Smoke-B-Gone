@@ -24,7 +24,7 @@
         tools:context=".SettingsActivity" >
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvWPPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvSAVED"
@@ -33,11 +33,11 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvWCPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/textView2"
-            android:layout_below="@+id/textView2"
+            android:layout_alignRight="@+id/tvWPPP"
+            android:layout_below="@+id/tvWPPP"
             android:layout_marginTop="16dp"
             android:text="Hoeveel sigaretten rookte je op een dag?"
             android:textAppearance="?android:attr/textAppearanceSmall" />
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/textView2"
+            android:layout_alignRight="@+id/tvWPPP"
             android:layout_marginTop="51dp"
             android:text="Aantal sigaretten per pakje:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -70,7 +70,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/etsCPP"
-            android:layout_alignTop="@+id/textView2"
+            android:layout_alignTop="@+id/tvWPPP"
             android:ems="10"
             android:inputType="numberDecimal" />
 
@@ -78,7 +78,7 @@
             android:id="@+id/etsCPD"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignBottom="@+id/tvWCPP"
             android:layout_alignLeft="@+id/etsPPP"
             android:ems="10"
             android:inputType="number" />
@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/etsCPD"
             android:layout_marginTop="45dp"
-            android:layout_toRightOf="@+id/textView3"
+            android:layout_toRightOf="@+id/tvWCPP"
             android:text="Opslaan" />
         
     </RelativeLayout>

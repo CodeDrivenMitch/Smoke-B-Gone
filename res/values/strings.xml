@@ -3,7 +3,6 @@
 
     <string name="app_name">Smoke-B-Gone</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="title_activity_info">InfoActivity</string>
     <string name="title_section1">Section 1</string>
@@ -20,5 +19,22 @@
     <string name="title_activity_xychart_builder">XYChartBuilder</string>
     <string name="title_activity_money">MoneyActivity</string>
     <string name="SplashTitleTV">Smoke-B-Gone</string>
+    
+    
+    
+    <!-- Welcome Activity Strings -->
+    <string name="waWelkom">Welkom bij SmokeBeGone!</string>
+    <string name="waInleiding">Deze app moet enkele dingen weten voor je deze kan gebruiken:</string>
+    <string name="waCPP">Aantal sigaretten per pakje:</string>
+    <string name="waPPP">Prijs per pakje:</string>
+    <string name="waCPD">Sigaretten per dag wat je normaal rookte:</string>
+    
+   	<!-- General strings -->
+   	
+   	<string name="gSave">Opslaan</string>
+   	
+   	
+   	<!-- Image Descriptions -->
+   	<string name="gBackgroundImage">Achtergrond</string>
 
 </resources>

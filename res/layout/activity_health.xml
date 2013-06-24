@@ -24,7 +24,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/tvWPPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health Benefit 1:" />
@@ -44,7 +44,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 2" />
@@ -64,7 +64,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 3" />
@@ -84,7 +84,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 4" />
@@ -104,7 +104,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 5" />
@@ -124,7 +124,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 6" />
@@ -144,7 +144,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 7" />
@@ -164,7 +164,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 8" />
@@ -184,7 +184,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Health benefit 9" />
