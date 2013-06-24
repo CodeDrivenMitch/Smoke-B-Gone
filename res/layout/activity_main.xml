@@ -17,17 +17,21 @@
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rlMAWholeScreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_twocolors"
-        android:gravity="left"
+        android:gravity="left|center_vertical"
         tools:context=".MainActivity" >
 
         <RelativeLayout
+            android:id="@+id/rlMALeftColumn"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            >
+            android:layout_margin="5dp"
+            android:background="#99FFFFFF"
+            android:gravity="center_vertical" >
 
             <LinearLayout
                 android:id="@+id/llDays"
@@ -49,7 +53,7 @@
 
                 <TextView
                     android:id="@+id/tvSuffixDays"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/gDayMultiple"
@@ -77,9 +81,9 @@
 
                 <TextView
                     android:id="@+id/tvSuffixHours"
-                    android:layout_width="wrap_content"
+                    android:layout_width="64dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
+                    android:layout_gravity="right|center_vertical"
                     android:text="@string/gHour"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </LinearLayout>
@@ -106,7 +110,7 @@
 
                 <TextView
                     android:id="@+id/tvSuffixMinutes"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/gMinuteMultiple"
@@ -115,7 +119,7 @@
 
             <LinearLayout
                 android:id="@+id/llSeconds"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/llMinutes"
                 android:layout_margin="0dp"
@@ -135,30 +139,63 @@
 
                 <TextView
                     android:id="@+id/tvSuffixSeconds"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:text="@string/gSecondMultiple"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSmokesComplementation"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llSeconds"
+                android:layout_margin="0dp"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/maSmokesComplementation"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSavings"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/llSmokesComplementation"
+                android:layout_margin="0dp"
+                android:gravity="center_horizontal" >
+
+                <TextView
+                    android:id="@+id/tvMASavings"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/maSavingsTVStandard" />
+
+            </LinearLayout>
         </RelativeLayout>
 
-		<RelativeLayout
-		    android:layout_width="wrap_content"
-		    android:layout_height="wrap_content" >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
 
-		    <Button
-		        android:id="@+id/btStillSmoked"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content"
-		        android:layout_alignParentRight="true"
-		        android:layout_alignParentTop="true"
-		        android:text="@string/maButtonSmoked"
-		        android:textSize="12sp" />
-
-		</RelativeLayout>
-        
-
+            <Button
+                android:id="@+id/btStillSmoked"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="@string/maButtonSmoked"
+                android:textSize="12sp" />
+        </RelativeLayout>
     </RelativeLayout>
 
 </com.goodhearted.smokebegone.SlideHolder>

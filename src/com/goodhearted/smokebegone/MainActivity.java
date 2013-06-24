@@ -10,12 +10,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
-	TextView tvDays, tvHours, tvMinutes, tvSeconds, tvDaysSuffix, tvHoursSuffix, tvMinutesSuffix, tvSecondsSuffix;
+	TextView tvDays, tvHours, tvMinutes, tvSeconds, tvDaysSuffix, tvHoursSuffix, tvMinutesSuffix, tvSecondsSuffix, tvSaving;
 	Button plus, info;
 
 	MenuHandler handler;
@@ -32,14 +34,16 @@ public class MainActivity extends Activity implements OnClickListener {
 		readyMenu();
 
 		DAO = new SmokeDataSource(this);
+		
 		plus = (Button) findViewById(R.id.btStillSmoked);
 		plus.setOnClickListener(this);
+		
 		tvDays = (TextView) findViewById(R.id.tvDayCount);
 		tvHours = (TextView) findViewById(R.id.tvHourCount);
 		tvMinutes = (TextView) findViewById(R.id.tvMinuteCount);
 		tvSeconds = (TextView) findViewById(R.id.tvSecondCount);
+		tvSaving = (TextView) findViewById(R.id.tvMASavings);
 		updateTV();
-
 	}
 
 	@Override
@@ -47,6 +51,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onResume();
 		tu = new TextUpdate(this);
 		tu.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		tu.cancel(true);
+		tu = null;
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -58,7 +69,6 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		// TODO Auto-generated method stub
 		switch (arg0.getId()) {
 		case R.id.btStillSmoked:
 			DAO.createSmoke();
@@ -95,6 +105,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		BigDecimal z = new BigDecimal(String.valueOf(savings)).setScale(scale,
 				BigDecimal.ROUND_HALF_UP);
+		tvSaving.setText("En daarmee heb je \u20ac" + z.toString() + " bespaard!");
 		
 	}
 
