@@ -75,7 +75,7 @@ public class XYChartBuilder extends Activity {
 
 		mRenderer.setPointSize(5);
 
-		String seriesTitle = "Smokes for the past 30 days";
+		String seriesTitle = "Gerookt in de laatste 30 dagen";
 		// create a new series of data
 		XYSeries series = new XYSeries(seriesTitle);
 		mDataset.addSeries(series);
