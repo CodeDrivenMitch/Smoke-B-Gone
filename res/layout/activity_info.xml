@@ -8,12 +8,13 @@
 
     <include  layout="@layout/slidemenulayout" android:id="@+id/id" />
 
-    <TabHost android:layout_width="fill_parent"
+    <TabHost 
+    android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/tabHost"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/background_twocolors">
-    >
+    android:background="@drawable/background_twocolors" >
+    
     <TabWidget
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
@@ -34,15 +35,18 @@
 
          <TextView
              android:id="@+id/txt1"
-             android:layout_width="fill_parent"
-             android:layout_height="wrap_content"
+             android:layout_width="250dip"
+             android:layout_height="0dip"
              android:layout_weight="0.40"
+             android:layout_gravity="center_horizontal"
+             android:background="#99FFFFFF"
              android:text="@string/info_kwf" />
 
          <Button
              android:id="@+id/bDoneer"
              android:layout_width="154dp"
              android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
              android:text="@string/donate_button"
              android:padding="20dp" />
      </LinearLayout>
@@ -54,11 +58,15 @@
     android:orientation="vertical"
     android:paddingTop="60dp"
      >
-     <TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/info_app"
-    android:id="@+id/txt2"
+     <TextView
+    android:id="@+id/txt2" 
+    android:layout_width="250dip"
+    android:layout_height="0dip" 
+    android:layout_weight="0.40"
+    android:layout_gravity="center_horizontal"
+    android:background="#99FFFFFF"
+    android:text="@string/info_app"   
+    
     />
    
      </LinearLayout>
