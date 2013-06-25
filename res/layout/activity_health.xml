@@ -27,119 +27,137 @@
 
             <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb1" />
 
             <ProgressBar
                 android:id="@+id/progressBar1"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
             
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb2" />
 
             <ProgressBar
                 android:id="@+id/progressBar2"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
 
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb3" />
 
             <ProgressBar
                 android:id="@+id/progressBar3"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
             
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb4" />
 
             <ProgressBar
                 android:id="@+id/progressBar4"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
 
             <TextView
                 android:id="@+id/tvWCPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb5" />
 
             <ProgressBar
                 android:id="@+id/progressBar5"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
             
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb6" />
 
             <ProgressBar
                 android:id="@+id/progressBar6"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
 
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+               android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb7" />
 
             <ProgressBar
                 android:id="@+id/progressBar7"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width=250dip
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
             
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb8" />
 
             <ProgressBar
                 android:id="@+id/progressBar8"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
 
              <TextView
                 android:id="@+id/tvWPPP"
-                android:layout_width="wrap_content"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:text="@string/hb9" />
 
             <ProgressBar
                 android:id="@+id/progressBar9"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
+                android:layout_width="250dip"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
                 android:max="100" />
 
 
