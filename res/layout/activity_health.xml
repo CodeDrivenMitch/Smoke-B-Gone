@@ -29,7 +29,7 @@
                 android:id="@+id/tvWPPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health Benefit 1:" />
+                android:text="@string/hb1" />
 
             <ProgressBar
                 android:id="@+id/progressBar1"
@@ -37,6 +37,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:max="100" />
+            
+             <TextView
+                android:id="@+id/tvWPPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hb2" />
 
             <ProgressBar
                 android:id="@+id/progressBar2"
@@ -45,11 +51,11 @@
                 android:layout_height="wrap_content"
                 android:max="100" />
 
-            <TextView
-                android:id="@+id/tvWCPP"
+             <TextView
+                android:id="@+id/tvWPPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health benefit 2" />
+                android:text="@string/hb3" />
 
             <ProgressBar
                 android:id="@+id/progressBar3"
@@ -57,6 +63,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:max="100" />
+            
+             <TextView
+                android:id="@+id/tvWPPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hb4" />
 
             <ProgressBar
                 android:id="@+id/progressBar4"
@@ -69,7 +81,7 @@
                 android:id="@+id/tvWCPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health benefit 3" />
+                android:text="@string/hb5" />
 
             <ProgressBar
                 android:id="@+id/progressBar5"
@@ -77,6 +89,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:max="100" />
+            
+             <TextView
+                android:id="@+id/tvWPPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hb6" />
 
             <ProgressBar
                 android:id="@+id/progressBar6"
@@ -85,11 +103,11 @@
                 android:layout_height="wrap_content"
                 android:max="100" />
 
-            <TextView
-                android:id="@+id/tvWCPP"
+             <TextView
+                android:id="@+id/tvWPPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health benefit 4" />
+                android:text="@string/hb7" />
 
             <ProgressBar
                 android:id="@+id/progressBar7"
@@ -97,6 +115,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:max="100" />
+            
+             <TextView
+                android:id="@+id/tvWPPP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hb8" />
 
             <ProgressBar
                 android:id="@+id/progressBar8"
@@ -105,11 +129,11 @@
                 android:layout_height="wrap_content"
                 android:max="100" />
 
-            <TextView
-                android:id="@+id/tvWCPP"
+             <TextView
+                android:id="@+id/tvWPPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Health benefit 5" />
+                android:text="@string/hb9" />
 
             <ProgressBar
                 android:id="@+id/progressBar9"
@@ -118,92 +142,7 @@
                 android:layout_height="wrap_content"
                 android:max="100" />
 
-            <ProgressBar
-                android:id="@+id/progressBar10"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
 
-            <TextView
-                android:id="@+id/tvWCPP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health benefit 6" />
-
-            <ProgressBar
-                android:id="@+id/progressBar11"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <ProgressBar
-                android:id="@+id/progressBar12"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <TextView
-                android:id="@+id/tvWCPP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health benefit 7" />
-
-            <ProgressBar
-                android:id="@+id/progressBar13"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <ProgressBar
-                android:id="@+id/progressBar14"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <TextView
-                android:id="@+id/tvWCPP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health benefit 8" />
-
-            <ProgressBar
-                android:id="@+id/progressBar15"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <ProgressBar
-                android:id="@+id/progressBar16"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <TextView
-                android:id="@+id/tvWCPP"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Health benefit 9" />
-
-            <ProgressBar
-                android:id="@+id/progressBar17"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
-
-            <ProgressBar
-                android:id="@+id/progressBar18"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:max="100" />
         </LinearLayout>
     </ScrollView>
 

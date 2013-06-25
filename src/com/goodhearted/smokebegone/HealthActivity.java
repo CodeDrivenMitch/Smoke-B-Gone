@@ -14,14 +14,10 @@ public class HealthActivity extends Activity {
 
 	SmokeDataSource DAO;
 
-	private static final int[] progress_sls_bid = { R.id.progressBar1,
-			R.id.progressBar3, R.id.progressBar5, R.id.progressBar7,
-			R.id.progressBar9, R.id.progressBar11, R.id.progressBar13,
-			R.id.progressBar15, R.id.progressBar17 };
-	private static final int[] progress_sq_bid = { R.id.progressBar2,
-			R.id.progressBar4, R.id.progressBar6, R.id.progressBar8,
-			R.id.progressBar10, R.id.progressBar12, R.id.progressBar14,
-			R.id.progressBar16, R.id.progressBar18 };
+	private static final int[] progress_sls_bid = { R.id.progressBar1, R.id.progressBar2,
+			R.id.progressBar3, R.id.progressBar4, R.id.progressBar5,R.id.progressBar6, R.id.progressBar7,
+			R.id.progressBar8, R.id.progressBar9, };
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +55,7 @@ public class HealthActivity extends Activity {
 	public void updateProgressBars() {
 
 		int[] progress_sls = new int[Period.benefits.length];
-		int[] progress_sq = new int[Period.benefits.length];
+		
 
 		Period sincelastsmoke, sincequit;
 
@@ -77,15 +73,14 @@ public class HealthActivity extends Activity {
 
 		for (int i = 0; i < Period.benefits.length; i++) {
 			progress_sls[i] = (int) (sincelastsmoke.getPeriod() / (Period.benefits[i] * 0.01));
-			progress_sq[i] = (int) (sincequit.getPeriod() / (Period.benefits[i] * 0.01));
+			
 		}
 
 		for (int i = 0; i < progress_sls_bid.length; i++) {
 			((ProgressBar) findViewById(progress_sls_bid[i]))
 					.setProgress(progress_sls[i]);
 
-			((ProgressBar) findViewById(progress_sq_bid[i]))
-					.setProgress(progress_sq[i]);
+			
 		}
 
 	}
