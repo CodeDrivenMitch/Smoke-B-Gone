@@ -65,9 +65,15 @@
     android:layout_weight="0.40"
     android:layout_gravity="center_horizontal"
     android:background="#99FFFFFF"
-    android:text="@string/info_app"   
-    
-    />
+    android:text="@string/info_app" />
+     
+    <Button
+             android:id="@+id/bDoneer2"
+             android:layout_width="154dp"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_horizontal"
+             android:text="@string/donate_button"
+             android:padding="20dp" />
    
      </LinearLayout>
      

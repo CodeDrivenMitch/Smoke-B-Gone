@@ -42,7 +42,16 @@ public class InfoActivity extends Activity {
 				Uri uri = Uri.parse( "http://helpen.kwfkankerbestrijding.nl/helpen-als-particulier/Pages/ik-geef-geld.aspx" );
 				startActivity( new Intent( Intent.ACTION_VIEW, uri ) );
 			}
-		});}
+		});
+	
+	Button donate2 = (Button)findViewById(R.id.bDoneer2);
+	donate2.setOnClickListener(new View.OnClickListener() {
+		public void onClick(View v)
+		{
+			Uri uri = Uri.parse( "http://helpen.kwfkankerbestrijding.nl/helpen-als-particulier/Pages/ik-geef-geld.aspx" );
+			startActivity( new Intent( Intent.ACTION_VIEW, uri ) );
+		}
+	});}
 			
 	
 	public boolean onOptionsItemSelected(MenuItem item){
