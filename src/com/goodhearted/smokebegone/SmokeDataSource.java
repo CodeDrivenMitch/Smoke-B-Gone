@@ -2,7 +2,9 @@ package com.goodhearted.smokebegone;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import android.content.ContentValues;
@@ -76,6 +78,23 @@ public class SmokeDataSource {
 	    cursor.close();
 	    return smokes;
 	  }
+	
+	public int getTotalSmokesOfToday()
+	{
+		int total = 0;
+		List<Smoke> s = getAllSmokes();
+		GregorianCalendar cal = new GregorianCalendar();
+		GregorianCalendar today = new GregorianCalendar();
+		for(Smoke b : s)
+		{
+			cal.setTimeInMillis(b.getDateInt());
+			if(cal.get(Calendar.DAY_OF_YEAR) == today.get(Calendar.DAY_OF_YEAR))
+			{
+				total += 1;
+			}
+		}
+		return total;
+	}
 	
 	//Get the total number of smokes
 	public int getTotalSmokes() {

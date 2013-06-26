@@ -36,10 +36,11 @@
          <TextView
              android:id="@+id/txt1"
              android:layout_width="250dip"
-             android:layout_height="wrap_content"
-             android:layout_weight="0.40"
+             android:layout_height="0dp"
              android:layout_gravity="center_horizontal"
+             android:layout_weight="0.40"
              android:background="#99FFFFFF"
+             android:padding="5dp"
              android:text="@string/info_kwf" />
 
          <Button
@@ -61,7 +62,7 @@
      <TextView
     android:id="@+id/txt2" 
     android:layout_width="250dip"
-    android:layout_height="wrap_content" 
+    android:layout_height="0dp" 
     android:layout_weight="0.40"
     android:layout_gravity="center_horizontal"
     android:background="#99FFFFFF"

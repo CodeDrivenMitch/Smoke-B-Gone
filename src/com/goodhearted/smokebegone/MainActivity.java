@@ -2,6 +2,7 @@ package com.goodhearted.smokebegone;
 
 import java.math.BigDecimal;
 import java.util.Date;
+
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,14 +16,17 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements OnClickListener {
 
 	SmokeDataSource DAO;
-	TextView tvDays, tvHours, tvMinutes, tvSeconds, tvDaysSuffix, tvHoursSuffix, tvMinutesSuffix, tvSecondsSuffix, tvSaving;
+	TextView tvDays, tvHours, tvMinutes, tvSeconds, tvDaysSuffix,
+			tvHoursSuffix, tvMinutesSuffix, tvSecondsSuffix, tvSaving,
+			tvTotalCigarettes, tvTotalTodayCigarettes, tvTotalSavedCigarettes;
 	Button plus, info;
 
 	MenuHandler handler;
 	TextUpdate tu;
-	
+
 	/**
-	 * Constructor for the acitivity, initializes variables, menu and button listeners
+	 * Constructor for the acitivity, initializes variables, menu and button
+	 * listeners
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,29 +35,32 @@ public class MainActivity extends Activity implements OnClickListener {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		setContentView(R.layout.activity_main);
-		
+
 		initializeVariables();
 	}
-	
+
 	/**
 	 * Initializes the class variables
 	 */
-	public void initializeVariables()
-	{
+	public void initializeVariables() {
 		DAO = new SmokeDataSource(this);
-		
+
 		plus = (Button) findViewById(R.id.btStillSmoked);
 		plus.setOnClickListener(this);
-		
+
 		tvDays = (TextView) findViewById(R.id.tvDayCount);
 		tvHours = (TextView) findViewById(R.id.tvHourCount);
 		tvMinutes = (TextView) findViewById(R.id.tvMinuteCount);
 		tvSeconds = (TextView) findViewById(R.id.tvSecondCount);
 		tvSaving = (TextView) findViewById(R.id.tvMASavings);
+		tvTotalCigarettes = (TextView) findViewById(R.id.tvTotalCigarettes);
+		tvTotalTodayCigarettes = (TextView) findViewById(R.id.tvTodayCigarettes);
+		tvTotalSavedCigarettes = (TextView) findViewById(R.id.tvWouldveCigarettes);
 		
+
 		new MenuHandler(this);
 	}
-	
+
 	/**
 	 * When resuming the app, create the update asynctask and run it
 	 */
@@ -73,7 +80,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		tu.cancel(true);
 		tu = null;
 	}
-	
+
 	/**
 	 * Opens or closes the menu on clicking the logo
 	 */
@@ -83,15 +90,17 @@ public class MainActivity extends Activity implements OnClickListener {
 		return true;
 
 	}
-	
+
 	/**
 	 * Closes menu (if open) on back button click
-	 */	
+	 */
 	@Override
 	public void onBackPressed() {
 		SlideHolder slideholder = (SlideHolder) findViewById(R.id.bla);
-		if(slideholder.isOpened()) slideholder.close();
-		else super.onBackPressed();
+		if (slideholder.isOpened())
+			slideholder.close();
+		else
+			super.onBackPressed();
 	}
 
 	/**
@@ -103,9 +112,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		switch (view.getId()) {
 		case R.id.btStillSmoked:
 			Smoke x = DAO.getLastSmoke();
-			if(x != null) {
+			if (x != null) {
 				Period p = new Period(x.getDateInt(), (new Date()).getTime());
-				if(p.getPeriod() > 1000) DAO.createSmoke();
+				if (p.getPeriod() > 1000)
+					DAO.createSmoke();
 			} else {
 				DAO.createSmoke();
 			}
@@ -114,7 +124,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		updateTV();
 	}
-	
+
 	/**
 	 * Updates the text fields, used for the runnable in the AsyncTask
 	 */
@@ -126,33 +136,41 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		long quitsmoketime = PreferenceProvider.readLong(this,
 				PreferenceProvider.keyQD, -1);
-		if(smoke != null){
-		e = new Period(smoke.getDateInt(), (new Date()).getTime());
+		if (smoke != null) {
+			e = new Period(smoke.getDateInt(), (new Date()).getTime());
 		} else {
 			e = new Period(quitsmoketime, (new Date()).getTime());
 		}
-		
+
 		tvDays.setText(Integer.toString(e.getDays()));
 		tvHours.setText(Integer.toString(e.getHours()));
 		tvMinutes.setText(Integer.toString(e.getMinutes()));
 		tvSeconds.setText(Integer.toString(e.getSeconds()));
-		
-		
+
 		d = new Period(quitsmoketime, (new Date().getTime()));
-		float savings = d.getSave(this, DAO.getTotalSmokes());
+		float savings = d.getSaveMoney(this, DAO.getTotalSmokes());
 		int scale = 0;
 		if (savings < 100) {
 			scale = 2;
 		}
 		BigDecimal z = new BigDecimal(String.valueOf(savings)).setScale(scale,
 				BigDecimal.ROUND_HALF_UP);
-		tvSaving.setText("In totaal heb je \u20ac" + z.toString() + " bespaard!");
+		tvSaving.setText("In totaal heb je \u20ac" + z.toString()
+				+ " bespaard!");
 		
+		tvTotalCigarettes.setText("U heeft tot nu toe " + DAO.getTotalSmokes() + " sigaretten gerookt");
+		
+		tvTotalTodayCigarettes.setText("U heeft vandaag " + DAO.getTotalSmokesOfToday() + " sigaretten gerookt");
+		e = new Period(quitsmoketime, (new Date()).getTime());
+		
+		tvTotalSavedCigarettes.setText("Totaal aantal sigaretten bespaard: " + (e.getSaveCigs(this, DAO.getTotalSmokes())));
 	}
 
 }
+
 /**
- * Updates the text parts of the main activity every second after created and untill cancelled
+ * Updates the text parts of the main activity every second after created and
+ * untill cancelled
  * 
  */
 
@@ -162,8 +180,8 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 	TextView tv;
 	TextUpdater tu;
 
-	//runnable for executing on UI thread
-	
+	// runnable for executing on UI thread
+
 	private class TextUpdater implements Runnable {
 
 		MainActivity act;
@@ -174,19 +192,20 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 
 		@Override
 		public void run() {
-			
+
 			this.act.updateTV();
 		}
 
 	}
-	
-	//constructor
+
+	// constructor
 	public TextUpdate(MainActivity act) {
 		this.act = act;
 		tu = new TextUpdater(this.act);
 		this.act.runOnUiThread(this.tu);
 	}
-	//sleeping sequence
+
+	// sleeping sequence
 	@Override
 	protected Void doInBackground(Void... arg0) {
 		while (true) {
@@ -195,7 +214,7 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 			} catch (Exception e) {
 				Log.d("SMB_THREAD", "MainActivity info update interrupted!");
 			} finally {
-				//execute the declared runnable on the UI thread
+				// execute the declared runnable on the UI thread
 				this.act.runOnUiThread(this.tu);
 			}
 		}
