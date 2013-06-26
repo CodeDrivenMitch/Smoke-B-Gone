@@ -1,14 +1,13 @@
 package com.goodhearted.smokebegone;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SettingsActivity extends Activity {
 
@@ -50,7 +49,6 @@ public class SettingsActivity extends Activity {
 		});
 	}
 
-	@SuppressWarnings("deprecation")
 	private void saveSettings() {
 		PreferenceProvider.writeInteger(this, PreferenceProvider.keyCPP,
 				Integer.parseInt(CPP.getText().toString()));
@@ -61,16 +59,8 @@ public class SettingsActivity extends Activity {
 
 		// display alert!
 
-		AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("Instellingen opgeslagen");
-		alertDialog.setMessage("Al uw instellingen zijn opgeslagen!");
-		alertDialog.setButton("OK", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-		alertDialog.setIcon(R.drawable.ic_launcher);
-		alertDialog.show();
+		Toast toast = Toast.makeText(this, "De instellingen zijn opgeslagen!", Toast.LENGTH_LONG);
+		toast.show();
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
