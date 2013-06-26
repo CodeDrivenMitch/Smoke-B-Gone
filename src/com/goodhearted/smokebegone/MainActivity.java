@@ -33,6 +33,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		readyMenu();
 
+		initializeVariables();
+	}
+	
+	/**
+	 * Initializes the class variables
+	 */
+	public void initializeVariables()
+	{
 		DAO = new SmokeDataSource(this);
 		
 		plus = (Button) findViewById(R.id.btStillSmoked);
@@ -43,7 +51,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		tvMinutes = (TextView) findViewById(R.id.tvMinuteCount);
 		tvSeconds = (TextView) findViewById(R.id.tvSecondCount);
 		tvSaving = (TextView) findViewById(R.id.tvMASavings);
-		updateTV();
 	}
 	
 	/**
