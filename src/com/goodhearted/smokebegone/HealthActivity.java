@@ -24,7 +24,7 @@ public class HealthActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_health);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		readyMenu();
+		new MenuHandler(this);
 		DAO = new SmokeDataSource(this);
 
 		updateProgressBars();
@@ -48,14 +48,6 @@ public class HealthActivity extends Activity {
 			slideholder.close();
 		else
 			super.onBackPressed();
-	}
-
-	private void readyMenu() {
-		handler = new MenuHandler(this);
-		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
-			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(
-					handler);
-		}
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {

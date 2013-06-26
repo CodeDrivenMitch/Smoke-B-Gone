@@ -28,7 +28,6 @@ public class XYChartBuilder extends Activity {
 	private GraphicalView mChartView;
 
 	private SmokeDataSource DAO;
-	private MenuHandler handler;
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
@@ -60,7 +59,7 @@ public class XYChartBuilder extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_xychart_builder);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		readyMenu();
+		new MenuHandler(this);
 		
 		// set some properties on the main renderer
 		mRenderer.setApplyBackgroundColor(true);
@@ -193,13 +192,6 @@ public class XYChartBuilder extends Activity {
 		x.toggle();
 		return true;
 
-	}
-
-	private void readyMenu() {
-		handler = new MenuHandler(this);
-		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
-			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(handler);
-		}
 	}
 
 }

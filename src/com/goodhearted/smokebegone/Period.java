@@ -85,20 +85,6 @@ public class Period {
 		this.miliseconds = (int) rest;
 	}
 
-	public String getString() {
-		if (this.days == 0 && this.hours == 0) {
-			return this.minutes + " minuten en " + this.seconds + " seconden";
-		} else if (this.days == 0) {
-			return this.hours + " uur en " + this.minutes + " minuten";
-		} else {
-			if (this.days > 1) {
-				return this.days + " dagen en " + this.hours + " uur";
-			} else {
-				return this.days + " dag en " + this.hours + " uur";
-			}
-		}
-	}
-
 	public float getSave(Context c, int smoked) {
 		int cpp = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPP,
 				-1));

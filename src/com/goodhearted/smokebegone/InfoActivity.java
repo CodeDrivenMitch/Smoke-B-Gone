@@ -33,7 +33,7 @@ public class InfoActivity extends Activity {
 
 		tabHost.addTab(spec1);
 		tabHost.addTab(spec2);
-		readyMenu();
+		new MenuHandler(this);
 		
 		Button donate = (Button)findViewById(R.id.bDoneer);
 		donate.setOnClickListener(new View.OnClickListener() {
@@ -72,12 +72,4 @@ public class InfoActivity extends Activity {
 		else
 			super.onBackPressed();
 	}
-	
-	private void readyMenu() {
-		handler = new MenuHandler(this);
-		for(int i = 0; i < MenuHandler.allMenuItems.length; i ++) {
-			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(handler);
-		}
-	}
-
 }

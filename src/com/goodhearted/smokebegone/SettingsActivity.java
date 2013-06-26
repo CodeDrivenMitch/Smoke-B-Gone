@@ -22,7 +22,7 @@ public class SettingsActivity extends Activity {
 		setContentView(R.layout.activity_settings);
 
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		readyMenu();
+		new MenuHandler(this);
 
 		CPP = (EditText) findViewById(R.id.etsCPP);
 		CPD = (EditText) findViewById(R.id.etsCPD);
@@ -90,12 +90,5 @@ public class SettingsActivity extends Activity {
 			slideholder.close();
 		else
 			super.onBackPressed();
-	}
-
-	private void readyMenu() {
-		handler = new MenuHandler(this);
-		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
-			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(handler);
-		}
 	}
 }

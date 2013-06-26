@@ -31,8 +31,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		setContentView(R.layout.activity_main);
-		readyMenu();
-
+		
 		initializeVariables();
 	}
 	
@@ -51,6 +50,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		tvMinutes = (TextView) findViewById(R.id.tvMinuteCount);
 		tvSeconds = (TextView) findViewById(R.id.tvSecondCount);
 		tvSaving = (TextView) findViewById(R.id.tvMASavings);
+		
+		new MenuHandler(this);
 	}
 	
 	/**
@@ -147,16 +148,6 @@ public class MainActivity extends Activity implements OnClickListener {
 				BigDecimal.ROUND_HALF_UP);
 		tvSaving.setText("In totaal heb je \u20ac" + z.toString() + " bespaard!");
 		
-	}
-
-	/**
-	 * Sets Clicklisteners on the menu items using the MenuHandler
-	 */
-	private void readyMenu() {
-		handler = new MenuHandler(this);
-		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
-			findViewById(MenuHandler.allMenuItems[i]).setOnClickListener(handler);
-		}
 	}
 
 }
