@@ -33,6 +33,7 @@ public class SmokeDataSource {
 		dbHelper.close();
 	}
 
+	//Create a new smoke, uses has smoked
 	public void createSmoke() {
 		Date d = new Date();
 		long d_s = d.getTime();
@@ -43,6 +44,7 @@ public class SmokeDataSource {
 		
 	}
 	
+	//get the date of the last smoke
 	public Smoke getLastSmoke() {
 		if(getAllSmokes().size() == 0) return null;
 		Cursor c = database.rawQuery("SELECT * FROM " + AccountClass.TABLE_SMOKES, null);
@@ -52,12 +54,14 @@ public class SmokeDataSource {
 		return smoke;
 	}
 	
+	//Remove the last smoke from database
 	public void removeLastSmoke(Smoke smoke) {
 		long id = smoke.getId();
 	    database.delete(AccountClass.TABLE_SMOKES, AccountClass.COLUMN_ID
 	        + " = " + id, null);
 	}
 	
+	//Get all smokes from database
 	public List<Smoke> getAllSmokes() {
 	    List<Smoke> smokes = new ArrayList<Smoke>();
 
@@ -73,10 +77,12 @@ public class SmokeDataSource {
 	    return smokes;
 	  }
 	
+	//Get the total number of smokes
 	public int getTotalSmokes() {
 		List<Smoke> s = getAllSmokes();
 		return s.size();
 	}
+	//makes a smoke object from the database
 	private Smoke cursorToSmoke(Cursor c) {
 		Smoke x = new Smoke();
 		x.setId(c.getLong(0));

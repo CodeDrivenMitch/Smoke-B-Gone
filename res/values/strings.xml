@@ -3,21 +3,21 @@
 
     <string name="app_name">Smoke-B-Gone</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_menu">MenuActivity</string>
-    <string name="title_activity_info">InfoActivity</string>
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_info">Informatie</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
     <string name="title_activity_splash">Smoke-B-Gone</string>
-    <string name="title_activity_info_">Info_Activity</string>
-    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_info_">Informatie</string>
+    <string name="title_activity_welcome">Welkom!</string>
     <string name="info_kwf">KWF Kankerbestrijding is een Nederlandse stichting die zich inzet voor bestrijding van kanker door middel van wetenschappelijk onderzoek, voorlichting, patiëntenondersteuning en fondsenwerving. Dat gebeurt samen met vrijwilligers, donateurs, patiënten, artsen en onderzoekers. De officiële naam van de stichting is Koningin Wilhelmina Fonds voor de Nederlandse Kankerbestrijding. Sinds november 2003 werkt de stichting onder de naam KWF Kankerbestrijding.</string>
     <string name="donate_button">Doneer Hier</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="title_activity_health">HealthActivity</string>
-    <string name="title_activity_chart">ChartActivity</string>
-    <string name="title_activity_xychart_builder">XYChartBuilder</string>
-    <string name="title_activity_money">MoneyActivity</string>
+    <string name="title_activity_settings">Instellingen</string>
+    <string name="title_activity_health">Gezondheid</string>
+    <string name="title_activity_chart">Grafiek</string>
+    <string name="title_activity_xychart_builder">Grafiek</string>
+    <string name="title_activity_money">Besparingen</string>
     <string name="SplashTitleTV">Smoke-B-Gone</string>
     
     
