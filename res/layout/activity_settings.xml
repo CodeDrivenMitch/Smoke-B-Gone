@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvSAVED"
             android:layout_marginTop="19dp"
-            android:text="Prijs per pakje:"
+            android:text="@string/setprijspp"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_alignRight="@+id/tvWPPP"
             android:layout_below="@+id/tvWPPP"
             android:layout_marginTop="16dp"
-            android:text="Hoeveel sigaretten rookte je op een dag?"
+            android:text="@string/setaantaldag"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignRight="@+id/tvWPPP"
             android:layout_marginTop="51dp"
-            android:text="Aantal sigaretten per pakje:"
+            android:text="@string/setaantalpakje"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -91,7 +91,7 @@
             android:layout_below="@+id/etsCPD"
             android:layout_marginTop="45dp"
             android:layout_toRightOf="@+id/tvWCPP"
-            android:text="Opslaan" />
+            android:text="@string/setopslaan" />
         
     </RelativeLayout>
 

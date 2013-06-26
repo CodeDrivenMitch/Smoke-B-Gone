@@ -61,5 +61,10 @@
    	<string name="hb7">Verslaving is zo goed als weg:</string>
    	<string name="hb8">Hersenen zijn weer zo goed als bij non-rokers:</string>
    	<string name="hb9">Je lichaam is weer beter, conditie is verbeterd en hoesten is weg:</string>
+   	<string name="setprijspp">Prijs per pakje?</string>
+   	<string name="setaantaldag">Hoeveel sigaretten rookte je op een dag?</string>
+   	<string name="setaantalpakje">Hoeveel sigaretten zitten er in een pakje?</string>
+   	<string name="setopslaan">Opslaan</string>
+   	<string name="health_tv">Textview</string>
 
 </resources>
