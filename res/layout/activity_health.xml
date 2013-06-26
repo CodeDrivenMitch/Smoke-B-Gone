@@ -26,7 +26,7 @@
             android:orientation="vertical" >
 
             <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP1"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -41,7 +41,7 @@
                 android:max="100" />
             
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP2"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -56,7 +56,7 @@
                 android:max="100" />
 
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP3"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -71,7 +71,7 @@
                 android:max="100" />
             
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP4"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -86,7 +86,7 @@
                 android:max="100" />
 
             <TextView
-                android:id="@+id/tvWCPP"
+                android:id="@+id/tvWCPP5"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -101,7 +101,7 @@
                 android:max="100" />
             
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP6"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -116,7 +116,7 @@
                 android:max="100" />
 
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP7"
                android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -131,7 +131,7 @@
                 android:max="100" />
             
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP8"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -146,7 +146,7 @@
                 android:max="100" />
 
              <TextView
-                android:id="@+id/tvWPPP"
+                android:id="@+id/tvWPPP9"
                 android:layout_width="250dip"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -168,6 +168,6 @@
         android:id="@+id/tvSplashTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="@string/health_tv" />
 
 </com.goodhearted.smokebegone.SlideHolder>
