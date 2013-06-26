@@ -3,16 +3,21 @@ package com.goodhearted.smokebegone;
 import java.util.Date;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 public class HealthActivity extends Activity {
 
 	MenuHandler handler;
 
 	SmokeDataSource DAO;
+	
+	ProgressbarUpdate progressupdater;
 
 	private static final int[] progress_sls_bid = { R.id.progressBar1,
 			R.id.progressBar2, R.id.progressBar3, R.id.progressBar4,
@@ -29,6 +34,20 @@ public class HealthActivity extends Activity {
 
 		updateProgressBars();
 
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		progressupdater.cancel(true);
+		progressupdater = null;
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		progressupdater = new ProgressbarUpdate(this);
+		progressupdater.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
 	@Override
@@ -86,3 +105,51 @@ public class HealthActivity extends Activity {
 
 	}
 }
+
+class ProgressbarUpdate extends AsyncTask<Void, Void, Void> {
+
+	HealthActivity act;
+	TextView tv;
+	ProgressUpdater tu;
+
+	//runnable for executing on UI thread
+	
+	private class ProgressUpdater implements Runnable {
+
+		HealthActivity act;
+
+		public ProgressUpdater(HealthActivity z) {
+			this.act = z;
+		}
+
+		@Override
+		public void run() {
+			
+			this.act.updateProgressBars();
+		}
+
+	}
+	
+	//constructor
+	public ProgressbarUpdate(HealthActivity act) {
+		this.act = act;
+		tu = new ProgressUpdater(this.act);
+		this.act.runOnUiThread(this.tu);
+	}
+	//sleeping sequence
+	@Override
+	protected Void doInBackground(Void... arg0) {
+		while (true) {
+			try {
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				Log.d("SMB_THREAD", "Progress bar update interrupted!");
+			} finally {
+				//execute the declared runnable on the UI thread
+				this.act.runOnUiThread(this.tu);
+			}
+		}
+	}
+
+}
+
