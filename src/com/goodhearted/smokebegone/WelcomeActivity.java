@@ -28,7 +28,7 @@ public class WelcomeActivity extends Activity implements OnClickListener {
 		save.setOnClickListener(this);
 
 		numPack = (EditText) findViewById(R.id.etWNumPerPack);
-		pricePack = (EditText) findViewById(R.id.etWPrice);
+		pricePack = (EditText) findViewById(R.id.etWPricePack);
 		numCigPerDay = (EditText) findViewById(R.id.etWSPD);
 	}
 

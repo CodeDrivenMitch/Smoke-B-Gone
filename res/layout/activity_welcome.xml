@@ -58,7 +58,7 @@
                     android:textSize="14sp" />
 
                 <EditText
-                    android:id="@+id/etWPrice"
+                    android:id="@+id/etWPricePack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/tvWWelkom"
@@ -75,7 +75,7 @@
                     android:id="@+id/tvWCPP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/etWPrice"
+                    android:layout_below="@+id/etWPricePack"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:text="@string/waCPP" />

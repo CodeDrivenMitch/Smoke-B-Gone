@@ -25,7 +25,7 @@ public class SettingsActivity extends Activity {
 
 		CPP = (EditText) findViewById(R.id.etWNumPerPack);
 		CPD = (EditText) findViewById(R.id.etWSPD);
-		PPP = (EditText) findViewById(R.id.etWPrice);
+		PPP = (EditText) findViewById(R.id.etWPricePack);
 
 		CPP.setText(""
 				+ (PreferenceProvider.readInteger(this,
