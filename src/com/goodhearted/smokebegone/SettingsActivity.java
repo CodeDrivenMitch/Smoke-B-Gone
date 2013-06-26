@@ -23,9 +23,9 @@ public class SettingsActivity extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		new MenuHandler(this);
 
-		CPP = (EditText) findViewById(R.id.etsCPP);
-		CPD = (EditText) findViewById(R.id.etsCPD);
-		PPP = (EditText) findViewById(R.id.etsPPP);
+		CPP = (EditText) findViewById(R.id.etWNumPerPack);
+		CPD = (EditText) findViewById(R.id.etWSPD);
+		PPP = (EditText) findViewById(R.id.etWPrice);
 
 		CPP.setText(""
 				+ (PreferenceProvider.readInteger(this,
@@ -37,7 +37,7 @@ public class SettingsActivity extends Activity {
 				+ (PreferenceProvider.readFloat(this,
 						PreferenceProvider.keyPPP, -1.0f)));
 
-		save = (Button) findViewById(R.id.etsSave);
+		save = (Button) findViewById(R.id.btWSave);
 		save.setOnClickListener(new OnClickListener() {
 
 			@Override
