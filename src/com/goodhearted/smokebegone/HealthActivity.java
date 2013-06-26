@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -48,13 +47,6 @@ public class HealthActivity extends Activity {
 		super.onResume();
 		progressupdater = new ProgressbarUpdate(this);
 		progressupdater.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.health, menu);
-		return true;
 	}
 
 	/**
