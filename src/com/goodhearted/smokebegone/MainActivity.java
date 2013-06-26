@@ -2,7 +2,6 @@ package com.goodhearted.smokebegone;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,7 +20,10 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	MenuHandler handler;
 	TextUpdate tu;
-
+	
+	/**
+	 * Constructor for the acitivity, initializes variables, menu and button listeners
+	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -29,7 +31,6 @@ public class MainActivity extends Activity implements OnClickListener {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		setContentView(R.layout.activity_main);
-
 		readyMenu();
 
 		DAO = new SmokeDataSource(this);
@@ -44,7 +45,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		tvSaving = (TextView) findViewById(R.id.tvMASavings);
 		updateTV();
 	}
-
+	
+	/**
+	 * When resuming the app, create the update asynctask and run it
+	 */
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -52,23 +56,43 @@ public class MainActivity extends Activity implements OnClickListener {
 		tu.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
 	}
 
+	/**
+	 * When pausing the app, cancel the asynctask
+	 */
 	@Override
 	protected void onPause() {
 		super.onPause();
 		tu.cancel(true);
 		tu = null;
 	}
-
+	
+	/**
+	 * Opens or closes the menu on clicking the logo
+	 */
 	public boolean onOptionsItemSelected(MenuItem item) {
-		SlideHolder x = (SlideHolder) findViewById(R.id.bla);
-		x.toggle();
+		SlideHolder slideholder = (SlideHolder) findViewById(R.id.bla);
+		slideholder.toggle();
 		return true;
 
 	}
+	
+	/**
+	 * Closes menu (if open) on back button click
+	 */	
+	@Override
+	public void onBackPressed() {
+		SlideHolder slideholder = (SlideHolder) findViewById(R.id.bla);
+		if(slideholder.isOpened()) slideholder.close();
+		else super.onBackPressed();
+	}
+
+	/**
+	 * Function for handling button actions
+	 */
 
 	@Override
-	public void onClick(View arg0) {
-		switch (arg0.getId()) {
+	public void onClick(View view) {
+		switch (view.getId()) {
 		case R.id.btStillSmoked:
 			Smoke x = DAO.getLastSmoke();
 			if(x != null) {
@@ -82,16 +106,20 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		updateTV();
 	}
+	
+	/**
+	 * Updates the text fields, used for the runnable in the AsyncTask
+	 */
 
 	public void updateTV() {
 		Period d, e;
 
-		Smoke x = DAO.getLastSmoke();
+		Smoke smoke = DAO.getLastSmoke();
 
 		long quitsmoketime = PreferenceProvider.readLong(this,
 				PreferenceProvider.keyQD, -1);
-		if(x != null){
-		e = new Period(x.getDateInt(), (new Date()).getTime());
+		if(smoke != null){
+		e = new Period(smoke.getDateInt(), (new Date()).getTime());
 		} else {
 			e = new Period(quitsmoketime, (new Date()).getTime());
 		}
@@ -110,10 +138,13 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 		BigDecimal z = new BigDecimal(String.valueOf(savings)).setScale(scale,
 				BigDecimal.ROUND_HALF_UP);
-		tvSaving.setText("En daarmee heb je \u20ac" + z.toString() + " bespaard!");
+		tvSaving.setText("In totaal heb je \u20ac" + z.toString() + " bespaard!");
 		
 	}
 
+	/**
+	 * Sets Clicklisteners on the menu items using the MenuHandler
+	 */
 	private void readyMenu() {
 		handler = new MenuHandler(this);
 		for (int i = 0; i < MenuHandler.allMenuItems.length; i++) {
@@ -122,6 +153,10 @@ public class MainActivity extends Activity implements OnClickListener {
 	}
 
 }
+/**
+ * Updates the text parts of the main activity every second after created and untill cancelled
+ * 
+ */
 
 class TextUpdate extends AsyncTask<Void, Void, Void> {
 
@@ -129,6 +164,8 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 	TextView tv;
 	TextUpdater tu;
 
+	//runnable for executing on UI thread
+	
 	private class TextUpdater implements Runnable {
 
 		MainActivity act;
@@ -139,17 +176,19 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 
 		@Override
 		public void run() {
+			
 			this.act.updateTV();
 		}
 
 	}
-
+	
+	//constructor
 	public TextUpdate(MainActivity act) {
 		this.act = act;
 		tu = new TextUpdater(this.act);
 		this.act.runOnUiThread(this.tu);
 	}
-
+	//sleeping sequence
 	@Override
 	protected Void doInBackground(Void... arg0) {
 		while (true) {
@@ -158,6 +197,7 @@ class TextUpdate extends AsyncTask<Void, Void, Void> {
 			} catch (Exception e) {
 				Log.d("SMB_THREAD", "MainActivity info update interrupted!");
 			} finally {
+				//execute the declared runnable on the UI thread
 				this.act.runOnUiThread(this.tu);
 			}
 		}
