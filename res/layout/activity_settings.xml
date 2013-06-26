@@ -33,19 +33,6 @@
             android:background="#99FFFFFF"
             android:gravity="center_horizontal" >
 
-        <EditText
-            android:id="@+id/etWPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignRight="@+id/etWSPD"
-            android:layout_below="@+id/tvWPPP"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="numberDecimal" >
-
-            <requestFocus />
-        </EditText>
-
         <TextView
             android:id="@+id/tvWCPP"
             android:layout_width="wrap_content"
@@ -65,16 +52,6 @@
             android:text="@string/waCPD" >
         </TextView>
 
-        <EditText
-            android:id="@+id/etWSPD"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvWCPP"
-            android:layout_below="@+id/tvWCPD"
-            android:layout_centerHorizontal="true"
-            android:ems="10"
-            android:inputType="number" />
-
         <Button
             android:id="@+id/btWSave"
             android:layout_width="wrap_content"
@@ -84,17 +61,6 @@
             android:layout_marginTop="15dp"
             android:text="@string/gSave" />
 
-        <EditText
-            android:id="@+id/etWNumPerPack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvWCPD"
-            android:layout_below="@+id/tvWCPP"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="0dp"
-            android:ems="10"
-            android:inputType="number" />
-
         <TextView
             android:id="@+id/tvWPPP"
             android:layout_width="wrap_content"
@@ -103,6 +69,37 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="@string/waPPP" />
+
+        <EditText
+            android:id="@+id/etWNumPerPack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWCPP"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etWPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWPPP"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/etWSPD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvWCPD"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="number" >
+
+            <requestFocus />
+        </EditText>
+
         </RelativeLayout>
     </RelativeLayout>
 

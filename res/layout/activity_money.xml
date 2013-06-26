@@ -10,47 +10,51 @@
         android:id="@+id/id"
         layout="@layout/slidemenulayout" />
 
-    <RelativeLayout
+    <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/background_twocolors"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
-        android:background="@drawable/background_twocolors"
         tools:context=".MoneyActivity" >
 
-        <TextView
-            android:id="@+id/tvSavePerDay"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:background="#99FFFFFF"
+            android:orientation="vertical"
+            android:padding="5dp" >
 
-        <TextView
-            android:id="@+id/tvSavePerWeek"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvSavePerDay"
-            android:layout_below="@+id/tvSavePerDay"
-            android:layout_marginTop="28dp"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/tvSavePerDay"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/tvSavePerYear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/tvSavePerWeek"
-            android:layout_below="@+id/tvSavePerWeek"
-            android:layout_marginTop="38dp"
-            android:text="Large Text"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            <TextView
+                android:id="@+id/tvSavePerWeek"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tvSavePerYear"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="38dp"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </com.goodhearted.smokebegone.SlideHolder>

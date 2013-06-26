@@ -1,5 +1,6 @@
 package com.goodhearted.smokebegone;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import android.app.Activity;
@@ -49,8 +50,15 @@ public class MoneyActivity extends Activity {
 	private void calculate() {
 		float saveperday = (new Period((long) ((new Date()).getTime())
 				- Period.day, new Date().getTime())).getSaveMoney(this, 0);
-		day.setText("Wat je per dag bespaard: " + saveperday);
-		week.setText("Wat je per maand bespaard: " + saveperday * 7);
-		year.setText("Wat je per jaar bespaard: " + saveperday * 365);
+
+		BigDecimal z = new BigDecimal(String.valueOf(saveperday)).setScale(2,
+				BigDecimal.ROUND_HALF_UP);
+		day.setText("Wat je per dag bespaart:\n \u20ac" + z.toString());
+		z = new BigDecimal(String.valueOf(saveperday*7)).setScale(2,
+				BigDecimal.ROUND_HALF_UP);
+		week.setText("\nWat je per maand bespaart:\n \u20ac" + z.toString());
+		z = new BigDecimal(String.valueOf(saveperday*365)).setScale(2,
+				BigDecimal.ROUND_HALF_UP);
+		year.setText("\nWat je per jaar bespaart:\n \u20ac" + z.toString());
 	}
 }
