@@ -30,27 +30,50 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:background="#99FFFFFF"
             android:gravity="center_horizontal" >
+=======
+            android:layout_below="@+id/tvSAVED"
+            android:layout_marginTop="19dp"
+            android:text="@string/setprijspp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+>>>>>>> 27fee658d0ec81a15ba709014eb62d8aaa8077e1
 
         <TextView
             android:id="@+id/tvWCPP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_below="@+id/etWPrice"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="@string/waCPP" />
+=======
+            android:layout_alignRight="@+id/tvWPPP"
+            android:layout_below="@+id/tvWPPP"
+            android:layout_marginTop="16dp"
+            android:text="@string/setaantaldag"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+>>>>>>> 27fee658d0ec81a15ba709014eb62d8aaa8077e1
 
         <TextView
             android:id="@+id/tvWCPD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_below="@+id/etWNumPerPack"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:text="@string/waCPD" >
         </TextView>
+=======
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/tvWPPP"
+            android:layout_marginTop="51dp"
+            android:text="@string/setaantalpakje"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+>>>>>>> 27fee658d0ec81a15ba709014eb62d8aaa8077e1
 
         <Button
             android:id="@+id/btWSave"
@@ -92,6 +115,7 @@
             android:id="@+id/etWSPD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_below="@+id/tvWCPD"
             android:layout_centerHorizontal="true"
             android:ems="10"
@@ -101,6 +125,13 @@
         </EditText>
 
         </RelativeLayout>
+=======
+            android:layout_below="@+id/etsCPD"
+            android:layout_marginTop="45dp"
+            android:layout_toRightOf="@+id/tvWCPP"
+            android:text="@string/setopslaan" />
+        
+>>>>>>> 27fee658d0ec81a15ba709014eb62d8aaa8077e1
     </RelativeLayout>
 
 </com.goodhearted.smokebegone.SlideHolder>
