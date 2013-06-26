@@ -85,20 +85,29 @@ public class Period {
 		this.miliseconds = (int) rest;
 	}
 
-	public float getSave(Context c, int smoked) {
-		int cpp = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPP,
-				-1));
+	public int getSaveCigs(Context c, int smoked) {
+		
 
 		int cpd = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPD,
 				-1));
-		float ppp = (PreferenceProvider.readFloat(c, PreferenceProvider.keyPPP,
-				-1.0f));
+		
 
 		float p = day / cpd;
-		float pricepercig = ppp / cpp;
+		
 		float numberofcigssaved = this.period / p - smoked;
 
-		return (pricepercig * numberofcigssaved);
+		return (int) numberofcigssaved;
+	}
+	
+	public float getSaveMoney(Context c, int smoked)
+	{
+		int cpp = (PreferenceProvider.readInteger(c, PreferenceProvider.keyCPP,
+				-1));
+		float ppp = (PreferenceProvider.readFloat(c, PreferenceProvider.keyPPP,
+				-1.0f));
+		float pricepercig = ppp / cpp;
+		
+		return getSaveCigs(c, smoked) * pricepercig;
 	}
 
 	public int getBenefitProgress(int index) {
