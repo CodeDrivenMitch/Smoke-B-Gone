@@ -94,6 +94,18 @@ public class XYChartBuilder extends Activity {
 		DAO = new SmokeDataSource(this);
 
 	}
+	
+	/**
+	 * Closes menu (if open) on back button click
+	 */
+	@Override
+	public void onBackPressed() {
+		SlideHolder slideholder = (SlideHolder) findViewById(R.id.bla);
+		if (slideholder.isOpened())
+			slideholder.close();
+		else
+			super.onBackPressed();
+	}
 
 	@SuppressWarnings("deprecation")
 	@Override

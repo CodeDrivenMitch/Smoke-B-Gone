@@ -49,6 +49,8 @@
    	
    	<!-- Image Descriptions -->
    	<string name="gBackgroundImage">Achtergrond</string>
+   	
+   	
    	<string name="info_app">Deze applicatie is gemaakt door Good-Hearted. De applicatie is bedoelt om gemotiveerde mensen net dat ene zetje te geven om te stoppen met roken. De applicatie is gemaakt in opdracht van Hogeschool Rotterdam. De applicatie is gemaakt met het KWF in ons achterhoofd. Dit heeft ervoor gezorgt dat we onder andere een doneer knop in onze applicatie hebben gebouwd die ervoor zorgt dat u op de doneer-pagina van het KWF terecht komt. Wij hopen dat u onze applicatie nuttig vind en wensen u veel geluk met het stoppen met roken!</string>
    	<string name="hb1">Je bloeddruk en de snelheid van je hart zijn weer normaal:</string>
    	<string name="hb2">Nicotine in je bloed gedaald met 93.75%:</string>
