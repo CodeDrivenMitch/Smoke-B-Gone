@@ -35,6 +35,18 @@ public class MoneyActivity extends Activity {
 		return true;
 
 	}
+	
+	/**
+	 * Closes menu (if open) on back button click
+	 */
+	@Override
+	public void onBackPressed() {
+		SlideHolder slideholder = (SlideHolder) findViewById(R.id.bla);
+		if (slideholder.isOpened())
+			slideholder.close();
+		else
+			super.onBackPressed();
+	}
 
 	private void readyMenu() {
 		handler = new MenuHandler(this);

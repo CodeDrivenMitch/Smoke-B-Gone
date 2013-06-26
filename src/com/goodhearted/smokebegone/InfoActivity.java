@@ -61,6 +61,18 @@ public class InfoActivity extends Activity {
 
     }
 	
+	/**
+	 * Closes menu (if open) on back button click
+	 */
+	@Override
+	public void onBackPressed() {
+		SlideHolder slideholder = (SlideHolder) findViewById(R.id.bla);
+		if (slideholder.isOpened())
+			slideholder.close();
+		else
+			super.onBackPressed();
+	}
+	
 	private void readyMenu() {
 		handler = new MenuHandler(this);
 		for(int i = 0; i < MenuHandler.allMenuItems.length; i ++) {
