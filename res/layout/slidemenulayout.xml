@@ -10,39 +10,41 @@
         style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home" />
+        android:text="@string/Home" />
 
     <Button
         android:id="@+id/bmHealth"
         style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Health Benefits" />
+        android:text="@string/title_activity_health" />
 
     <Button
         android:id="@+id/bmInfo"
         style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Info" />
+        android:text="@string/title_activity_info" />
 
-    <Button
-        android:id="@+id/bmSettings"
-        style="@style/MenuTheme"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Settings" />
+    
     <Button
         android:id="@+id/bmChart"
         style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chart test" />
+        android:text="@string/title_activity_xychart_builder" />
     <Button
         android:id="@+id/bmMoney"
         style="@style/MenuTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Money test" />
+        android:text="@string/title_activity_money" />
+    
+    <Button
+        android:id="@+id/bmSettings"
+        style="@style/MenuTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_settings" />
 
 </LinearLayout>
