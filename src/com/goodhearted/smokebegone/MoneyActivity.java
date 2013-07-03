@@ -54,7 +54,7 @@ public class MoneyActivity extends Activity {
 		BigDecimal z = new BigDecimal(String.valueOf(saveperday)).setScale(2,
 				BigDecimal.ROUND_HALF_UP);
 		day.setText("Wat je per dag bespaart:\n \u20ac" + z.toString());
-		z = new BigDecimal(String.valueOf(saveperday*7)).setScale(2,
+		z = new BigDecimal(String.valueOf(saveperday*31)).setScale(2,
 				BigDecimal.ROUND_HALF_UP);
 		week.setText("\nWat je per maand bespaart:\n \u20ac" + z.toString());
 		z = new BigDecimal(String.valueOf(saveperday*365)).setScale(2,
